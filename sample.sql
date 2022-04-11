@@ -1,10 +1,9 @@
-
 SHOW DATABASES;
 USE SBR;
 SHOW TABLES;
 
-
-CREATE TABLE Sailors(
+/* SAILORS */
+CREATE TABLE Sailors (
     Sid INT PRIMARY KEY,
     Sname VARCHAR(20),
     Sage FLOAT,
@@ -23,8 +22,8 @@ INSERT INTO Sailors VALUES(85, 'Ant', 25.5, 3);
 INSERT INTO Sailors VALUES(95, 'Bob', 63.5, 3);
 SELECT * FROM Sailors;
 
-
-CREATE TABLE Boats(
+/* BOATS */
+CREATE TABLE Boats (
     Bid INT PRIMARY KEY,
     Bname VARCHAR(20),
     Bcolor VARCHAR(20)
@@ -36,8 +35,8 @@ INSERT INTO Boats VALUES(103, 'Clipper', 'Green');
 INSERT INTO Boats VALUES(104, 'Marine', 'Red');
 SELECT * FROM Boats;
 
-
-CREATE TABLE Reserves(
+/* RESERVES */
+CREATE TABLE Reserves (
     Sid INT,
     Bid INT,
     day DATE,
@@ -57,3 +56,18 @@ INSERT INTO Reserves VALUES(64, 101, '1998-05-09');
 INSERT INTO Reserves VALUES(64, 102, '1998-08-09');
 INSERT INTO Reserves VALUES(74, 103, '1998-08-09');
 SELECT * FROM Reserves;
+
+/*
+QUERIES
+
+a) Write a query to display the details of sailors whose rating is greater than 7.
+b) Write a query to display the average age of sailors.
+c) Write a query to display distinct sailor names.
+d) Write a query to display the information of sailors who have reserved boat number 101.
+
+*/
+
+SELECT * FROM Sailors WHERE Srating > 7;
+SELECT AVG(Sage) FROM Sailors;
+SELECT DISTINCT Sname FROM Sailors;
+SELECT * FROM Sailors WHERE Sid IN (SELECT Sid FROM Reserves WHERE Bid = 101);
