@@ -23,9 +23,20 @@ class partTimeEmployee(
         override fun display() {
             println("name : $name\tage : $age\texperience : $experience\tsalary : $wagePerDay")
         }
-        fun calcSalary() {
+        fun calculateSalary() {
             print("Enter number of days worked : ")
             var days = readLine()!!.toInt()
-            println("Salary : ${wagePerDay * days}")
+            println("Total salary earned : ${wagePerDay * days}")
         }
+}
+fun main() {
+    var fE = fullTimeEmployee("Kiran", 25, 4.5, 20000)
+    var pE = partTimeEmployee("Sri", 26, 5.5, 200)
+    fE.display()
+    fE.experience = 6.7
+    fE.display()
+    pE.display()
+    pE.name = "John"
+    pE.display()
+    pE.calculateSalary()
 }
