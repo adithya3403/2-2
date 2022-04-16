@@ -1,16 +1,31 @@
-class Solution {
-    fun twoSum(nums: IntArray, target: Int): IntArray {
-        for (i in nums.indices) {
-            for (j in i + 1 until nums.size) {
-                if (nums[i] + nums[j] == target) {
-                    return intArrayOf(i, j)
-                }
-            }
+open class Employee(
+    open var name : String,
+    open val age : Int,
+    open var experience : Double) {
+        open fun display() {
+            println("name : $name\tage : $age\texperience : $experience")
         }
-        return intArrayOf()
-    }
 }
-fun main() {
-    val solution = Solution()
-    println(solution.twoSum(intArrayOf(2, 7, 11, 15), 9))
+class fullTimeEmployee(
+    override var name : String,
+    override val age : Int,
+    override var experience : Double,
+    var salary : Int) : Employee(name, age, experience) {
+        override fun display() {
+            println("name : $name\tage : $age\texperience : $experience\tsalary : $salary")
+        }
+}
+class partTimeEmployee(
+    override var name : String, 
+    override val age : Int, 
+    override var experience : Double, 
+    var wagePerDay : Int) : Employee(name, age, experience) {
+        override fun display() {
+            println("name : $name\tage : $age\texperience : $experience\tsalary : $wagePerDay")
+        }
+        fun calcSalary() {
+            print("Enter number of days worked : ")
+            var days = readLine()!!.toInt()
+            println("Salary : ${wagePerDay * days}")
+        }
 }

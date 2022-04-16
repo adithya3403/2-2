@@ -1,33 +1,25 @@
 import java.util.*;
 
-class LCP {
+public class sample {
+    public static void goatLatin(String input) {
+        String sarr[] = input.split(" ");
+        for (int i = 0; i < sarr.length; i++) {
+            char c = sarr[i].charAt(0);
+            if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u' && c != 'A' && c != 'E' && c != 'I' && c != 'O'
+                    && c != 'U') {
+                String sub = sarr[i].substring(1);
+                sub = sub + sarr[i].charAt(0);
+                sarr[i] = sub;
+            }
+            sarr[i] = sarr[i] + "ma" + "a".repeat(i + 1);
+            System.out.print(sarr[i] + " ");
+        
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.nextLine();
-        String s = sc.nextLine();
-        String str[] = s.split(" ");
-        String rstr = str[0];
-        for (int i = 1; i < str.length; i++) {
-            if (str[i].length() < rstr.length()) {
-                rstr = str[i];
-            }
-        }
-        String res = "";
-        for (int i = 0; i < rstr.length(); i++) {
-            boolean flag = true;
-            for (int j = 0; j < n; j++) {
-                if (str[j].charAt(i) != rstr.charAt(i)) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                res = res + rstr.charAt(i);
-            } else {
-                break;
-            }
-        }
-        System.out.println(res);
+        String input = sc.nextLine();
+        goatLatin(input);
+        sc.close();
     }
 }
