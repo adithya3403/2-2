@@ -1,32 +1,46 @@
-class Animal {
-    void eat() {
-        System.out.println("eat() of Animal class");
-    }
+/*
+abstract class Animal {
+    abstract void eat();
+    abstract void talk();
+    abstract void walk();
+};
+*/
 
-    void talk() {
-        System.out.println("talk() of Animal class");
-    }
+interface Animal {
+    void eat();
+
+    void talk();
+
+    void walk();
 }
 
-class Tiger extends Animal {
-    void eat() {
-        System.out.println("eat() of Tiger class");
+class Tiger implements Animal {
+    public void eat() {
+        System.out.println("eat() of Tiger called");
     }
 
-    void talk() {
-        System.out.println("talk() of Tiger class");
-    }
-}
-
-class Elephant extends Animal {
-    void eat() {
-        System.out.println("eat() of Elephant class");
+    public void talk() {
+        System.out.println("talk() of Tiger called");
     }
 
-    void talk() {
-        System.out.println("talk() of Elephant class");
+    public void walk() {
+        System.out.println("walk() of Tiger called");
     }
-}
+};
+
+class Elephant implements Animal {
+    public void eat() {
+        System.out.println("eat() of Elephant called");
+    }
+
+    public void talk() {
+        System.out.println("talk() of Elephant called");
+    }
+
+    public void walk() {
+        System.out.println("walk() of Elephant class called");
+    }
+};
 
 class sample {
     public static void main(String[] args) {
@@ -37,6 +51,7 @@ class sample {
         zoo[2] = new Tiger();
         for (Animal a : zoo) {
             a.eat();
+            a.walk();
         }
     }
-}
+};
