@@ -30,10 +30,13 @@ class Elephant extends Animal {
 
 class sample {
     public static void main(String[] args) {
-        Animal a;
-        a = new Tiger();
-        a.eat();
-        a = new Elephant();
-        a.eat();
+        Animal zoo[];
+        zoo = new Animal[3];
+        zoo[0] = new Tiger();
+        zoo[1] = new Elephant();
+        zoo[2] = new Tiger();
+        for (Animal a : zoo) {
+            a.eat();
+        }
     }
 }
