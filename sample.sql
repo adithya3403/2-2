@@ -1,5 +1,7 @@
 SHOW DATABASES;
-USE dbmslab;
+
+USE dbms31052022;
+
 CREATE TABLE customers (
     CustomerID VARCHAR(5) NOT NULL PRIMARY KEY,
     CompanyName VARCHAR(40) NOT NULL,
@@ -13,7 +15,7 @@ CREATE TABLE customers (
     Phone VARCHAR(24) DEFAULT NULL,
     Fax VARCHAR(24) DEFAULT NULL
 );
-DESC customers;
+
 CREATE TABLE employees (
     EmployeeID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     LastName VARCHAR(20) NOT NULL,
@@ -29,7 +31,7 @@ CREATE TABLE employees (
     ReportsTo INT(11) DEFAULT NULL,
     Salary FLOAT DEFAULT NULL
 );
-DESC employees;
+
 CREATE TABLE orders (
     OrderID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     CustomerID VARCHAR(5) DEFAULT NULL,
@@ -41,31 +43,31 @@ CREATE TABLE orders (
     ShipName VARCHAR(40) DEFAULT NULL,
     ShipAddress VARCHAR(60) DEFAULT NULL
 );
-DESC orders;
+
 CREATE TABLE categories (
     CategoryID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     CategoryName VARCHAR(15) NOT NULL
 );
-DESC categories;
+
 CREATE TABLE products (
     ProductID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     ProductName VARCHAR(40) NOT NULL,
     SupplierID INT(11) DEFAULT NULL,
     CategoryID INT(11) DEFAULT NULL,
     QuantityPerUnit VARCHAR(20) DEFAULT NULL,
-    UnitPrice DECIMAL(10,4) DEFAULT 0.0000,
+    UnitPrice DECIMAL(10, 4) DEFAULT 0.0000,
     UnitsInStock SMALLINT(2) DEFAULT 0,
     UnitsOnOrder SMALLINT(2) DEFAULT 0,
     ReorderLevel SMALLINT(2) DEFAULT 0,
-    Discontinued BIT(1) NOT NULL DEFAULT b'0'
+    Discontinued BIT(1) NOT NULL DEFAULT 0
 );
-DESC products;
+
 CREATE TABLE shippers (
     ShipperID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     CompanyName VARCHAR(40) NOT NULL,
     Phone VARCHAR(24) DEFAULT NULL
 );
-DESC shippers;
+
 CREATE TABLE suppliers (
     SupplierID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     CompanyName VARCHAR(40) NOT NULL,
@@ -74,12 +76,27 @@ CREATE TABLE suppliers (
     Address VARCHAR(60) DEFAULT NULL,
     Phone VARCHAR(24) DEFAULT NULL
 );
-DESC suppliers;
+
 CREATE TABLE orderdetails (
     OrderID INT(11) NOT NULL,
     ProductID INT(11) NOT NULL,
-    UnitPrice DECIMAL(10,4) NOT NULL DEFAULT 0.0000,
+    UnitPrice DECIMAL(10, 4) NOT NULL DEFAULT 0.0000,
     Quantity SMALLINT(2) NOT NULL DEFAULT 1,
     PRIMARY KEY (OrderID, ProductID)
 );
+
+DESC customers;
+
+DESC employees;
+
+DESC orders;
+
+DESC categories;
+
+DESC products;
+
+DESC shippers;
+
+DESC suppliers;
+
 DESC orderdetails;
