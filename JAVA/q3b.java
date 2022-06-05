@@ -2,8 +2,13 @@
 // The matrix has to be filled with numbers starting from 1. It has to start fill 
 // first row last column,last row(reverse),first column(reverse)and so on.Please refer 
 // the following example 
-// input=5 
-// output=1 2 3 4 5 16 17 18 19 6 15 24 25 20 7 14 23 22 21 8 13 12 11 10 9
+// input:5 
+// output:
+// 1  2  3  4  5
+// 16 17 18 19 6
+// 15 24 25 20 7
+// 14 23 22 21 8
+// 13 12 11 10 9
 
 import java.util.*;
 
@@ -17,28 +22,20 @@ public class q3b {
         int colEnd = n - 1;
         int[][] a = new int[n][n];
         while (rowBegin <= rowEnd && colBegin <= colEnd) {
-            // Traverse Right
-            for (int j = colBegin; j <= colEnd; j++) {
+            for (int j = colBegin; j <= colEnd; j++)
                 a[rowBegin][j] = sc.nextInt();
-            }
             rowBegin++;
-            // Traverse Down
-            for (int j = rowBegin; j <= rowEnd; j++) {
+            for (int j = rowBegin; j <= rowEnd; j++)
                 a[j][colEnd] = sc.nextInt();
-            }
             colEnd--;
             if (rowBegin <= rowEnd) {
-                // Traverse Left
-                for (int j = colEnd; j >= colBegin; j--) {
+                for (int j = colEnd; j >= colBegin; j--)
                     a[rowEnd][j] = sc.nextInt();
-                }
             }
             rowEnd--;
             if (colBegin <= colEnd) {
-                // Traver Up
-                for (int j = rowEnd; j >= rowBegin; j--) {
+                for (int j = rowEnd; j >= rowBegin; j--)
                     a[j][colBegin] = sc.nextInt();
-                }
             }
             colBegin++;
         }
@@ -54,7 +51,8 @@ public class q3b {
 
 // EXPECTED OUTPUT:
 // Sample Input:
-// 3 2 4 5 3 6 8 1 9 7
+// 3
+// 2 4 5 3 6 8 1 9 7
 // Sample Output:
 // 2 4 5
 // 9 7 3 
