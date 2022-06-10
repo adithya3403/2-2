@@ -17,7 +17,7 @@ int main() {
     }
     for (int i = 0; i < n; i++) {
         pos = i;
-        for (j = i + 1; j < n; j++) {
+        for (int j = i + 1; j < n; j++) {
             if (bt[j] < bt[pos])
                 pos = j;
         }
@@ -49,8 +49,8 @@ int main() {
 }
 
 /*
-Sample Output :
-
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc sjf_np.c -o sjf_np
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./sjf_np
 Enter number of process:5
 
 Enter Burst Time:
@@ -69,5 +69,4 @@ Process     Burst Time          Waiting Time    Turnaround Time
 
 Average Waiting Time=4.000000
 Average Turnaround Time=7.400000
-
 */

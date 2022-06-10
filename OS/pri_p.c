@@ -70,7 +70,9 @@ void main() {
 }
 
 /*
-Sample Output :
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc pri_p.c -o pri_p
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./pri_p
+
 Enter Total Number of Processes:        3
 
 Enter Details For Process[A]:

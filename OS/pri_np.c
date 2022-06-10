@@ -57,8 +57,8 @@ int main() {
 }
 
 /*
-Sample Output:
-
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc pri_np.c -o pri_np
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./pri_np
 Enter Total Number of Processes:        3
 
 Enter Burst Time and pr For 3 Processes

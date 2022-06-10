@@ -41,7 +41,8 @@ int main() {
 }
 
 /*
-Sample Output: 
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc sjf_p.c -o sjf_p
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./sjf_p
 
 Enter the Total Number of Processes:    4
 
@@ -61,5 +62,5 @@ Enter Burst Time:       8
 
 
 Average Waiting Time:   4.750000
-Average Turnaround Time:       10.000000
+Average Turnaround Time:        10.000000
 */

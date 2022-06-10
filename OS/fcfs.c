@@ -1,7 +1,4 @@
-/**
- * First come First Serve
- * FCFS
-*/
+// First come First Served (FCFS)
 
 #include <stdio.h>
 
@@ -51,11 +48,10 @@ int main() {
     return 0;
 }
 
-
 /*
 
-SAMPLE INPUT AND OUTPUT : 
-
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc fcfs.c -o fcfs
+adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./fcfs
 Enter number of processes: 3
 Enter Burst time for each process: 10 5 8
 Pid     BT      WT      TAT
