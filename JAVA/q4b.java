@@ -6,22 +6,22 @@
 
 import java.util.*;
 class q4b {
-    public static String mergeAlternately(String word1, String word2) {
+    public static String mergeAlternately(String w1, String w2) {
         StringBuilder sb = new StringBuilder();
-        int index1 = 0, index2 = 0;
-        while (index1 < word1.length() && index2 < word2.length()) {
-            sb.append(word1.charAt(index1));
-            sb.append(word2.charAt(index2));
-            index1++;
-            index2++;
+        int i1 = 0, i2 = 0;
+        while (i1 < w1.length() && i2 < w2.length()) {
+            sb.append(w1.charAt(i1));
+            sb.append(w2.charAt(i2));
+            i1++;
+            i2++;
         }
-        while (index1 < word1.length()) {
-            sb.append(word1.charAt(index1));
-            index1++;
+        while (i1 < w1.length()) {
+            sb.append(w1.charAt(i1));
+            i1++;
         }
-        while (index2 < word2.length()) {
-            sb.append(word2.charAt(index2));
-            index2++;
+        while (i2 < w2.length()) {
+            sb.append(w2.charAt(i2));
+            i2++;
         }
         return sb.toString();
     }
@@ -37,4 +37,4 @@ class q4b {
 // Sample Input:
 // abc def
 // Sample Output:
-// abcdef
+// adbecf
