@@ -24,9 +24,3 @@ int main() {
     }
     msgctl(msgid, IPC_RMID, 0);
 }
-
-// adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/os/ipcmsgq$ gcc recv.c -o recv
-// adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/os/ipcmsgq$ ./recv
-// Data received: red
-// Data received: hat
-// Data received: end

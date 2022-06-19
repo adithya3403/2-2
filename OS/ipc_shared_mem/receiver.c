@@ -13,11 +13,3 @@ int main() {
     printf("process attached at %p\n", shared_memory);
     printf("data read from shared memory is : %s\n", (char *)shared_memory);
 }
-
-/*
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/ipc_shared_mem$ gcc receiver.c -o receiver 
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/ipc_shared_mem$ ./receiver
-key of shared memory is : 0
-process attached at 0x7fdfebea6000
-data read from shared memory is : hello world
-*/

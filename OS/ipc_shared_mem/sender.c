@@ -16,13 +16,3 @@ int main() {
     strcpy(shared_memory, buffer);
     printf("your data is %s\n", (char *)shared_memory);
 }
-
-/*
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/ipc_shared_mem$ gcc sender.c -o sender
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/ipc_shared_mem$ ./sender
-key of shared memory is : 0
-process attached at 0x7f8d25d9a000
-enter some data to write to a shared memory 
-hello world
-your data is hello world
-*/

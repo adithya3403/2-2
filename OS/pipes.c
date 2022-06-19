@@ -17,11 +17,3 @@ int main() {
         write(1, buffer, n);
     }
 }
-
-/*
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc pipes.c -o pipes
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./pipes
-Parent Passing value to child
-Child printing received value
-this i
-*/

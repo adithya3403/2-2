@@ -33,12 +33,3 @@ int main() {
         }
     }
 }
-
-// adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/os/ipcmsgq$ gcc send.c -o send
-// adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/os/ipcmsgq$ ./send
-// Enter some text:
-// red
-// Enter some text:
-// hat
-// Enter some text:
-// end
