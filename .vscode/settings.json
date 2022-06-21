@@ -2,5 +2,9 @@
     "files.associations": {
         "ostream": "cpp",
         "*.tcc": "c"
-    }
+    },
+    "java.project.sourcePaths": [
+        "JAVA"
+    ],
+    "database-client.disableSqlCodeLen": true,
 }
