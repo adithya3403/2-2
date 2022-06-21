@@ -1,3 +1,5 @@
+// FCFS
+
 #include <stdio.h>
 int main() {
     int n, t, num, b;
@@ -17,11 +19,9 @@ int main() {
                 t = arrat[i];
                 arrat[i] = arrat[j];
                 arrat[j] = t;
-
                 num = arrid[i];
                 arrid[i] = arrid[j];
                 arrid[j] = num;
-
                 b = arrb[i];
                 arrb[i] = arrb[j];
                 arrb[j] = b;
@@ -47,11 +47,3 @@ int main() {
     printf("avg TAT : %d\n", avgtat / n);
     printf("avg WT : %d\n", avgwt / n);
 }
-
-/*
-0 0 80
-1 0 20
-2 0 10
-3 0 20
-4 0 50
-*/
