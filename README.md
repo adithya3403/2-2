@@ -12,4 +12,4 @@ message queues -> https://github.com/adithya3403/VSCODE-FILES/tree/main/OS/ipcMs
 shared memory -> https://github.com/adithya3403/VSCODE-FILES/tree/main/OS/ipc_shared_mem
 
 ii)
-fcfs -> https://github.com/adithya3403/VSCODE-FILES/blob/main/sample.c
+fcfs -> https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/fcfs.c

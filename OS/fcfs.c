@@ -1,64 +1,50 @@
-// First come First Served (FCFS)
+// FCFS
 
 #include <stdio.h>
-
-void findWT(int processes[], int n, int bt[], int wt[]) {
-    wt[0] = 0;
-    for (int i = 1; i < n; i++)
-        wt[i] = bt[i - 1] + wt[i - 1];
-}
-
-void findTAT(int processes[], int n, int bt[], int wt[], int tat[]) {
-    for (int i = 0; i < n; i++)
-        tat[i] = bt[i] + wt[i];
-}
-
-void findAT(int processes[], int n, int bt[]) {
-    int wt[n], tat[n], total_wt = 0, total_tat = 0;
-    findWT(processes, n, bt, wt);
-    findTAT(processes, n, bt, wt, tat);
-    printf("Pid\tBT\tWT\tTAT\n");
-    for (int i = 0; i < n; i++) {
-        total_wt = total_wt + wt[i];
-        total_tat = total_tat + tat[i];
-        printf("%d\t", (i + 1));
-        printf("%d\t", bt[i]);
-        printf("%d\t", wt[i]);
-        printf("%d\t\n", tat[i]);
-    }
-    float s = (float)total_wt / (float)n;
-    float t = (float)total_tat / (float)n;
-    printf("Average waiting time = %0.2f", s);
-    printf("\n");
-    printf("Average turn around time = %0.2f", t);
-}
-
 int main() {
-    int n;
-    printf("Enter number of processes: ");
-    scanf("%d", &n);
-    int processes[n];
-    for (int i = 0; i < n; i++)
-        processes[i] = i + 1;
-    int burst_time[n];
-    printf("Enter Burst time for each process: ");
-    for (int i = 0; i < n; i++)
-        scanf("%d", &burst_time[i]);
-    findAT(processes, n, burst_time);
-    return 0;
+	int n, t, num, b;
+	printf("Enter number of processes : ");
+	scanf("%d", &n);
+	int arrid[n];
+	int arrat[n];
+	int arrb[n];
+	int ft[n], tat[n], wt[n];
+	printf("Enter ids, arrival times and burst times : \n");
+	for (int i = 0; i < n; i++) {
+		scanf("%d %d %d", &arrid[i], &arrat[i], &arrb[i]);
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (arrat[i] < arrat[j]) {
+				t = arrat[i];
+				arrat[i] = arrat[j];
+				arrat[j] = t;
+				num = arrid[i];
+				arrid[i] = arrid[j];
+				arrid[j] = num;
+				b = arrb[i];
+				arrb[i] = arrb[j];
+				arrb[j] = b;
+			}
+		}
+	}
+	ft[0] = arrat[0] + arrb[0];
+	for (int i = 1; i < n; i++) {
+		ft[i] = ft[i - 1] + arrb[i];
+	}
+	for (int i = 0; i < n; i++) {
+		tat[i] = ft[i] - arrat[i];
+		wt[i] = tat[i] - arrb[i];
+	}
+	int avgwt = 0;
+	int avgtat = 0;
+	printf("id\t AT\t BT\t FT\t TAT\t WT\n");
+	for (int i = 0; i < n; i++) {
+		printf("%d\t %d\t %d\t %d\t %d\t %d\n", arrid[i], arrat[i], arrb[i], ft[i],
+		tat[i], wt[i]);
+		avgtat = avgtat + tat[i];
+		avgwt = avgwt + wt[i];
+	}
+	printf("avg TAT : %d\n", avgtat / n);
+	printf("avg WT : %d\n", avgwt / n);
 }
-
-/*
-
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc fcfs.c -o fcfs
-adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./fcfs
-Enter number of processes: 3
-Enter Burst time for each process: 10 5 8
-Pid     BT      WT      TAT
-1       10      0       10
-2       5       10      15
-3       8       15      23
-Average waiting time = 8.33
-Average turn around time = 16.00
-
-*/
