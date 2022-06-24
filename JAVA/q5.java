@@ -36,7 +36,6 @@ class MyRectangle {
         int x2 = Math.min(v2x, rect.v2x);
         int y2 = Math.min(v2y, rect.v2y);
         if (x1 > x2 || y1 > y2) {
-            System.out.println("why");
             return new MyRectangle(0, 0, 0, 0);
         } else {
             return new MyRectangle(x1, y1, x2, y2);
@@ -54,6 +53,10 @@ class MySquare extends MyRectangle {
         length = leng;
     }
 
+    public int area() {
+        return length * length;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int x, y, len;
@@ -63,10 +66,6 @@ class MySquare extends MyRectangle {
         MySquare m = new MySquare(x, y, len);
         System.out.println(m.area());
         sc.close();
-    }
-
-    public int area() {
-        return length * length;
     }
 }
 

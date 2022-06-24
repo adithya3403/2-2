@@ -12,22 +12,10 @@ import java.util.*;
 
 class Resistor {
     HashMap<String, Integer> color;
-    // data members
-    private String band1;
-    private String band2;
-    private String band3;
-    private double value; // Resistor value (Ohms)
-    // default constructor
+    String band1 = "", band2 = "", band3 = "";
+    double value = 0.0f;
 
-    public Resistor() {
-        band1 = band2 = band3 = "";
-        value = 0.0;
-    }
-
-    // Constructor taking three strings as parameters
-    // and calculating the resistance
     public Resistor(String b1, String b2, String b3) {
-        // *** to be completed ***
         band1 = b1;
         band2 = b2;
         band3 = b3;
@@ -45,14 +33,14 @@ class Resistor {
     }
 
     public String getResistance() {
-        int firstdig = color.get(band1);
-        int seconddig = color.get(band2);
-        int thirddig = (int) Math.pow(10, color.get(band3));
-        String value1 = Integer.toString(firstdig) + Integer.toString(seconddig);
-        value = Integer.parseInt(value1) * thirddig;
+        int d1 = color.get(band1);
+        int d2 = color.get(band2);
+        int d3 = (int) Math.pow(10, color.get(band3));
+        String v1 = Integer.toString(d1) + Integer.toString(d2);
+        value = Integer.parseInt(v1) * d3;
         value = value / 1000;
-        value1 = value + " Kilo_ohms";
-        return value1;
+        v1 = value + " K ohms";
+        return v1;
     }
 }
 
@@ -64,4 +52,4 @@ public class q2 {
 }
 
 // EXPECTED OUTPUT
-// 20.0 Kilo_ohms
+// 20.0 K ohms

@@ -8,10 +8,15 @@
 import java.util.Scanner;
 
 class q4a {
-    public static int longestCommonSubsequence(String text1, String text2) {
-        int[][] dp = new int[text1.length() + 1][text2.length() + 1];
-        for (int i = 1; i <= text1.length(); i++) {
-            for (int j = 1; j <= text2.length(); j++) {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String text1 = sc.next();
+        String text2 = sc.next();
+        int n1 = text1.length();
+        int n2 = text2.length();
+        int[][] dp = new int[n1 + 1][n2 + 1];
+        for (int i = 1; i <= n1; i++) {
+            for (int j = 1; j <= n2; j++) {
                 if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
@@ -19,12 +24,7 @@ class q4a {
                 }
             }
         }
-        return dp[text1.length()][text2.length()];
-    }
-
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println(longestCommonSubsequence(sc.next(), sc.next()));
+        System.out.println(dp[n1][n2]);
         sc.close();
     }
 }
