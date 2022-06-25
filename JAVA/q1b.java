@@ -46,3 +46,4 @@ public class q1b {
 // case=3
 // input=103
 // output=105
+
