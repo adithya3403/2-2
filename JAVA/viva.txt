@@ -1,0 +1,76 @@
+Java is Object Oriented. However, it is not considered as a pure object-oriented as it provides support for primitive
+data types (like int, char, etc).
+Interface: Interfaces are the blueprints of the classes. They specify what a class must do and not how. Like a class, an
+interface can have methods and variables, but the methods declared in an interface are by default abstract (i.e.) they only
+contain method signature and not the body of the method. Interfaces are used to implement a complete abstraction.
+
+Inheritance: It is a mechanism in java by which one class is allowed to inherit the features of the another class. There are
+multiple inheritances possible in java. The advantages of Java are as follows:
+Java is easy to learn.
+Java was designed to be easy to use and is therefore easy to write, compile, debug, and learn than other programming languages.
+Java is object-oriented.
+This allows you to create modular programs and reusable code.
+Java is platform-independent.
+One of the most significant advantages of Java is its ability to move easily from one computer system to another. The
+ability to run the same program on many different systems is crucial to World Wide Web software, and Java succeeds at this
+by being platform-independent at both the source and binary levels.
+Because of Java's robustness, ease of use, cross-platform capabilities and security features, it has become a language of
+choice for providing worldwide Internet solutions.
+
+A class can also be defined as a blueprint from which you can create an individual object. Class doesn't consume any space.
+An Object can be defined as an instance of a class. An object contains an address and takes up some space in memory.
+When one object acquires all the properties and behaviors of a parent object, it is known as inheritance. It provides code
+reusability. It is used to achieve runtime polymorphism.
+
+1) OOPs makes development and maintenance easier, whereas, in a procedure-oriented programming language, it is not easy to
+manage if code grows as project size increases
+2) OOPs provides data hiding, whereas, in a procedure-oriented programming language, global data can be accessed from anywhere.
+Java is the high-level programming language that was developed by James Gosling in the year 1982. It is based on the principles
+of object-oriented programming and can be used to develop large-scale applications.
+
+Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure
+object oriented language. C++ is only a compiled language, whereas Java is compiled as well as an interpreted language.
+Java programs are machine-independent whereas a c++ program can run only in the machine in which it is compiled. 
+C++ allows users to use pointers in the program. Whereas java doesn’t allow it. Java internally uses pointers. 
+C++ supports the concept of Multiple inheritances whereas Java doesn't support this. And it is due to avoiding the complexity
+of name ambiguity that causes the diamond problem.
+
+In Java, the final keyword is used as defining something as constant /final and represents the non-access modifier.
+The super keyword is used to access hidden fields and overridden methods or attributes of the parent class.
+
+Because there must be only 1 main method in the java program as the execution starts from the main method. So for this
+reason the main method is static.
+By using inheritance, a child class acquires all properties and behaviors of parent class.
+
+There are the following reasons to use inheritance in java.
+We can reuse the code from the base class.
+Using inheritance, we can increase features of class or method by overriding.
+Inheritance is used to use the existing features of class.
+It is used to achieve runtime polymorphism i.e method overriding.
+A class from where a subclass inherits features is called superclass. It is also called base class or parent class.
+
+A class that inherits all the members (fields, method, and nested classes) from other class is called subclass. It is
+also called a derived class, child class, or extended class. Object class is the superclass of every other class.
+
+Can a final method be overridden?
+Ans: No, a final method cannot be overridden.
+
+which keyword is used to inherit a class?
+Ans: extends keyword.
+
+The various types of inheritance are as follows:
+a. Single inheritance
+b. Multi-level inheritance
+c. Hierarchical inheritance
+d. Multiple inheritance
+e. Hybrid inheritance
+
+Multiple inheritance means that one class extends two superclasses or base classes but in Java, one class cannot
+extend more than one class simultaneously. At most, one class can extend only one class. Therefore, to reduce ambiguity,
+complexity, and confusion, Java does not support multiple inheritance through classes.
+
+Like classes, does interfaces also extend Object class by default?
+No. Interfaces don’t extend Object class.
+
+Can an interface have a class or another interface as it’s members?
+Yes. Interfaces can have classes or interfaces as their members.
