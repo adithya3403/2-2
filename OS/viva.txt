@@ -1,0 +1,139 @@
+1. define OS
+A) An operating system (OS) is the program that, after being initially 
+loaded into the computer by a boot program, manages all of the other 
+application programs in a computer.
+
+2. what are schedulers ?
+A) Schedulers are special system software which handle process scheduling 
+in various ways. Their main task is to select the jobs to be submitted
+into the system and to decide which process to run.
+
+3. what is scheduling criteria ?
+A) CPU utilisation, throughput, Turn arounf time, waiting time
+
+4. scheduling algs
+A) fcfs, sjf, priority(preemp and nonpreemp), SRT, RR, multi-level queue,
+multi-level feedback queues, etc.
+
+5. preemp and non-preemp differences
+A) Key Differences Between Preemptive and Non-Preemptive Scheduling: In 
+preemptive scheduling, the CPU is allocated to the processes for a 
+limited time whereas, in Non-preemptive scheduling, the CPU is allocated 
+to the process till it terminates or switches to the waiting state.
+
+6. shared mem and message passing differences
+A) Message passing is a time consuming process because it is implemented 
+through kernel (system calls). In shared memory make sure that the 
+processes are not writing to the same location simultaneously.
+
+7. diff types of functions used in shared mem and message passing
+(explain about parameters)
+A) shmat, shmget, msgget: The msgget() system call returns the message 
+queue identifier associated with the value of the key argument
+The msgsnd() and msgrcv() system calls are used, respectively, to send
+messages to, and receive messages from, a message queue. The calling
+process must have write permission on the message queue in order to
+send a message, and read permission to receive a message.
+
+8. explain about AT, BT, FT, WT and TAT(with formulae)
+A) Arrival Time: Time at which the process arrives in the ready queue.
+Burst Time: Time required by a process for CPU execution.
+Completion Time: Time at which process completes its execution.
+Waiting Time(TAT-BT): total time spent by the process in the ready state
+waiting for CPU
+Turn Around Time(FT-AT): total time it takes for a program to provide
+the required output to the user after the program is started
+
+9. explain need of IPC.
+A) IPC in OS obtains modularity, computational speedup and data sharing. 
+Different ways of IPC are pipe, message passing, message queue, shared 
+memory, direct communication, indirect communication and FIFO. It is 
+important to obtain synchronization among processes in IPC to maintain 
+data consistency.
+
+10. diff bw independent and cooperative process
+A) any process that does not share any data with any other process is 
+independent. A process is said to be cooperating if it can affect or be 
+affected by the other processes executing in the system.
+
+11. diff types of os services
+A) Program execution, I/O operations, File System manipulation, 
+Communication, Error Detection, Resource Allocation, Protection
+
+12. diff types of process operations
+A) creation, scheduling, blocking, preemption, termination
+
+13. diff bw wait() and wait_pid()
+A) Wait() waits for any child process but waitpid() waits for a specific 
+child equal to pid. By default waitpid() waits for the only terminated 
+child where as wait() waits for both terminated or a signaled child.
+
+14. expalin about dual mode.
+A) Dual Mode in OS is the switching of modes between the two modes and 
+switching of mode by the OS for computation of process by system. Dual 
+Mode is responsible for the management of processes and avoiding any 
+system crashes. Every system works on operations mainly in two modes to 
+safeguard hardware’s computation.
+The two modes are − User Mode and Kernel Mode
+
+15. diff bw kernel and os
+A) Operating system is a system software. Kernel is a part of operating 
+system. Operating system acts as an interface between user and hardware. 
+Kernel acts as an interface between applications and hardware
+
+---------------
+
+1. write and read system calls
+A) write() can be used to write to any file (all hardware are also 
+referred as file in Linux) in the system but rather than specifying the 
+file name, you need to specify its file descriptor.read() will read the 
+data from file pointed to by file descriptor. The use of read() system 
+call is to read from a file descriptor.
+
+2. fork system call
+A) Fork system call is used for creating a new process, which is called 
+child process, which runs concurrently with the process that makes the 
+fork() call (parent process). After a new child process is created, 
+both processes will execute the next instruction following the fork() 
+system call.
+
+3. what is a pipe ? its types
+A) A pipe is an important mechanism in Unix-based systems that allows 
+us to communicate data from one process to another without storing 
+anything on the disk. In Linux, we have two types of pipes: pipes (also 
+known as anonymous or unnamed pipes) and FIFO's (also known as named 
+pipes)
+
+4. shared memory
+A) shared memory is memory that may be simultaneously accessed by 
+multiple programs with an intent to provide communication among them or 
+avoid redundant copies. Shared memory is an efficient means of passing 
+data between programs.
+
+5. use of shmid, shmat
+A) shared memory identifier(shmid): t is used to identify or refer to 
+the associated data structure. This identifier is accessible by any 
+process in the system, subject to normal access restrictions.
+
+shared memory attach operation(shmat): The shmat() function attaches to 
+the shared memory segment specified by shmid and returns the address of 
+the shared memory segment.
+
+6. message queue
+A) A message queue is a linked list of messages stored within the 
+kernel and identified by a message queue identifier. A new queue is 
+created or an existing queue opened by msgget(). New messages are added 
+to the end of a queue by msgsnd().
+
+7. functions of OS
+A) security, error detection, memory management, processor management, 
+device management, files management, job accounting, control over system performance, etc.
+
+8. starvation
+A) Starvation is the problem that occurs when high priority processes 
+keep executing and low priority processes get blocked for indefinite 
+time
+
+9. aging technique
+A) Aging is a technique of gradually increasing the priority of 
+processes that wait in the system for a long time.
