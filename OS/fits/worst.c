@@ -1,54 +1,57 @@
+// Worst fit
+
 #include <stdio.h>
-void implimentWorstFit(int blockSize[], int blocks, int processSize[], int processes) {
-    int allocation[processes];
-    int occupied[blocks];
-    for (int i = 0; i < processes; i++) {
-        allocation[i] = -1;
+void main() {
+    int bsize[20], psize[20];
+    int all[20], m, n, i, j;
+    printf("Enter no of blocks : ");
+    scanf("%d", &m);
+    printf("Enter the size of each block : ");
+    for (i = 0; i < m; i++) {
+        scanf("%d", &bsize[i]);
     }
-    for (int i = 0; i < blocks; i++) {
-        occupied[i] = 0;
+    printf("Enter the no of processes : ");
+    scanf("%d", &n);
+    printf("Enter the size of each process : ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &psize[i]);
+        all[i] = -1;
     }
-    for (int i = 0; i < processes; i++) {
-        int indexPlaced = -1;
-        for (int j = 0; j < blocks; j++) {
-            if (blockSize[j] >= processSize[i] && !occupied[j]) {
-                if (indexPlaced == -1)
-                    indexPlaced = j;
-                else if (blockSize[indexPlaced] < blockSize[j])
-                    indexPlaced = j;
+    for (int i = 0; i < n; i++) {
+        int worstplace = -1;
+        for (j = 0; j < m; j++) {
+            if (bsize[j] >= psize[i]) {
+                if (worstplace == -1)
+                    worstplace = j;
+                else if (bsize[worstplace] < bsize[j])
+                    worstplace = j;
             }
         }
-        if (indexPlaced != -1) {
-            allocation[i] = indexPlaced;
-            occupied[indexPlaced] = 1;
-            blockSize[indexPlaced] -= processSize[i];
+        if (worstplace != -1) {
+            all[i] = worstplace;
+            bsize[worstplace] -= psize[i];
         }
     }
-    printf("\nProcess No.\tProcess Size\tBlock no.\n");
-    for (int i = 0; i < processes; i++) {
-        printf("%d \t\t\t %d \t\t\t", i + 1, processSize[i]);
-        if (allocation[i] != -1)
-            printf("%d\n", allocation[i] + 1);
+    printf("\n Process No \t Process Size\t Block no.\n");
+    for (int i = 0; i < n; i++) {
+        printf("% d\t\t % d\t\t", i + 1, psize[i]);
+        if (all[i] != -1)
+            printf("% d\n", all[i] + 1);
         else
-            printf("Not Allocated\n");
+            printf("Not Allocated \n");
     }
-}
-int main() {
-    int blockSize[] = {100, 50, 30, 120, 35};
-    int processSize[] = {40, 10, 30, 60};
-    int blocks = sizeof(blockSize) / sizeof(blockSize[0]);
-    int processes = sizeof(processSize) / sizeof(processSize[0]);
-    implimentWorstFit(blockSize, blocks, processSize, processes);
-    return 0;
 }
 
 /*
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/fits$ gcc worst.c -o worst
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/fits$ ./worst
-
-Process No.     Process Size    Block no.
-1                        40                     4
-2                        10                     1
-3                        30                     2
-4                        60                     Not Allocated
+Enter no of blocks : 5
+Enter the size of each block : 100 500 200 300 600
+Enter the no of processes : 4
+Enter the size of each process : 212 417 112 426
+Process No      Process Size    Block no.
+1                212            5
+2                417            2
+3                112            5
+4                426           Not Allocated
 */

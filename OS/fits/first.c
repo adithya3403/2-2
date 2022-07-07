@@ -1,46 +1,52 @@
-#include <stdio.h>
+// First fit
 
-void implimentFirstFit(int blockSize[], int blocks, int processSize[], int processes) {
-    int allocate[processes];
-    int occupied[blocks];
-    for (int i = 0; i < processes; i++) {
-        allocate[i] = -1;
+#include <stdio.h>
+void main() {
+    int bsize[10], psize[10], bno, pno, flags[10], allocation[10], i, j;
+    for (i = 0; i < 10; i++) {
+        flags[i] = 0;
+        allocation[i] = -1;
     }
-    for (int i = 0; i < blocks; i++) {
-        occupied[i] = 0;
-    }
-    for (int i = 0; i < processes; i++) {
-        for (int j = 0; j < blocks; j++) {
-            if (!occupied[j] && blockSize[j] >= processSize[i]) {
-                allocate[i] = j;
-                occupied[j] = 1;
+    printf("Enter no of blocks : ");
+    scanf("%d", &bno);
+    printf("Enter the size of each block : ");
+    for (i = 0; i < bno; i++)
+        scanf("%d", &bsize[i]);
+    printf("Enter the no of processes : ");
+    scanf("%d", &pno);
+    printf("Enter the size of each process : ");
+    for (i = 0; i < pno; i++)
+        scanf("%d", &psize[i]);
+    for (int i = 0; i < pno; i++) {
+        for (int j = 0; j < bno; j++) {
+            if (bsize[j] >= psize[i]) {
+                allocation[i] = j;
+                bsize[j] -= psize[i];
                 break;
             }
         }
     }
-    printf("\nProcess No.\tProcess Size\tBlock no.\n");
-    for (int i = 0; i < processes; i++) {
-        printf("%d \t\t\t %d \t\t\t", i + 1, processSize[i]);
-        if (allocate[i] != -1)
-            printf("%d\n", allocate[i] + 1);
+    printf("\n processno \t process size\t Block no\n");
+    for (int i = 0; i < pno; i++) {
+        printf("%d\t\t%d\t\t", i + 1, psize[i]);
+        if (allocation[i] != -1)
+            printf("%d\n", allocation[i] + 1);
         else
-            printf("Not Allocated\n");
+            printf("Not allocated\n");
     }
-}
-int main() {
-    int blockSize[] = {30, 5, 10};
-    int processSize[] = {10, 6, 9};
-    int m = sizeof(blockSize) / sizeof(blockSize[0]);
-    int n = sizeof(processSize) / sizeof(processSize[0]);
-    implimentFirstFit(blockSize, m, processSize, n);
 }
 
 /*
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/fits$ gcc first.c -o first
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS/fits$ ./first
+Enter no of blocks : 5
+Enter the size of each block : 100 500 200 300 600
+Enter the no of processes : 4
+Enter the size of each process : 212 417 112 426
 
-Process No.     Process Size    Block no.
-1                        10                     1
-2                        6                      3
-3                        9                      Not Allocated
+processno       process size    Block no
+1               212             2
+2               417             5
+3               112             2
+4               426             Not allocated
 */
