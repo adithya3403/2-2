@@ -1,4 +1,4 @@
-// First fit
+// First Fit
 
 #include <stdio.h>
 void main() {

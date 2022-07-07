@@ -1,7 +1,6 @@
-// Best fit
+// Best Fit
 
 #include <stdio.h>
-
 void main() {
     int fragment[20], b[20], p[20], i, j, nb, np, temp, lowest = 9999;
     static int barray[20], parray[20];

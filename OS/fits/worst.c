@@ -1,4 +1,4 @@
-// Worst fit
+// Worst Fit
 
 #include <stdio.h>
 void main() {
