@@ -22,14 +22,22 @@ limited time whereas, in Non-preemptive scheduling, the CPU is allocated
 to the process till it terminates or switches to the waiting state.
 
 6. shared mem and message passing differences
-A) Message passing is a time consuming process because it is implemented 
-through kernel (system calls). In shared memory make sure that the 
-processes are not writing to the same location simultaneously.
+A) shmem: It is used for communication between single processor and 
+multiprocessor systems where the processes that are to be communicated 
+present on the same machine and they are sharing common address space.
+speed: high
+
+msg passing: It is used in distributed environments where the 
+communicating processes are present on remote machines which are 
+connected with the help of a network. speed: time consuming
 
 7. diff types of functions used in shared mem and message passing
 (explain about parameters)
-A) shmat, shmget, msgget: The msgget() system call returns the message 
-queue identifier associated with the value of the key argument
+A) shmat: attaches the shared memory segment associated with the shared 
+memory identifier, shmid, to the address space of the calling process.
+shmget: returns the shared memory identifier associated with key.
+msgget: The msgget() system call returns the message 
+queue identifier associated with the value of the key argument.
 The msgsnd() and msgrcv() system calls are used, respectively, to send
 messages to, and receive messages from, a message queue. The calling
 process must have write permission on the message queue in order to

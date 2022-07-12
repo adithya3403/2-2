@@ -1,102 +1,36 @@
-SHOW DATABASES;
+-- show databases;
 
-USE dbms31052022;
+-- create database today;
 
-CREATE TABLE customers (
-    CustomerID VARCHAR(5) NOT NULL PRIMARY KEY,
-    CompanyName VARCHAR(40) NOT NULL,
-    ContactName VARCHAR(30) DEFAULT NULL,
-    ContactTitle VARCHAR(30) DEFAULT NULL,
-    Address VARCHAR(60) DEFAULT NULL,
-    City VARCHAR(15) DEFAULT NULL,
-    Region VARCHAR(15) DEFAULT NULL,
-    PostalCode VARCHAR(10) DEFAULT NULL,
-    Country VARCHAR(15) DEFAULT NULL,
-    Phone VARCHAR(24) DEFAULT NULL,
-    Fax VARCHAR(24) DEFAULT NULL
-);
+-- use today;
 
-CREATE TABLE employees (
-    EmployeeID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    LastName VARCHAR(20) NOT NULL,
-    FirstName VARCHAR(10) NOT NULL,
-    JobTitle VARCHAR(30) DEFAULT NULL,
-    BirthDate DATETIME DEFAULT NULL,
-    HireDate DATETIME DEFAULT NULL,
-    Address VARCHAR(60) DEFAULT NULL,
-    City VARCHAR(15) DEFAULT NULL,
-    PostalCode VARCHAR(10) DEFAULT NULL,
-    Country VARCHAR(15) DEFAULT NULL,
-    Phone VARCHAR(24) DEFAULT NULL,
-    ReportsTo INT(11) DEFAULT NULL,
-    Salary FLOAT DEFAULT NULL
-);
+-- show tables;
 
-CREATE TABLE orders (
-    OrderID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    CustomerID VARCHAR(5) DEFAULT NULL,
-    EmployeeID INT(11) DEFAULT NULL,
-    OrderDate DATETIME DEFAULT NULL,
-    RequiredDate DATETIME DEFAULT NULL,
-    ShippedDate DATETIME DEFAULT NULL,
-    ShipID INT(11) DEFAULT NULL,
-    ShipName VARCHAR(40) DEFAULT NULL,
-    ShipAddress VARCHAR(60) DEFAULT NULL
-);
+-- create table
+--     student(
+--         student_id int,
+--         name varchar(20),
+--         address varchar(20),
+--         marks int
+--     );
 
-CREATE TABLE categories (
-    CategoryID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    CategoryName VARCHAR(15) NOT NULL
-);
+-- desc student;
 
-CREATE TABLE products (
-    ProductID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ProductName VARCHAR(40) NOT NULL,
-    SupplierID INT(11) DEFAULT NULL,
-    CategoryID INT(11) DEFAULT NULL,
-    QuantityPerUnit VARCHAR(20) DEFAULT NULL,
-    UnitPrice DECIMAL(10, 4) DEFAULT 0.0000,
-    UnitsInStock SMALLINT(2) DEFAULT 0,
-    UnitsOnOrder SMALLINT(2) DEFAULT 0,
-    ReorderLevel SMALLINT(2) DEFAULT 0,
-    Discontinued BIT(1) NOT NULL DEFAULT 0
-);
+-- insert into student
+-- values (1, 'billie', 'ny', 220), (2, 'eilish', 'london', 190), (3, 'ariana', 'miami', 180);
 
-CREATE TABLE shippers (
-    ShipperID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    CompanyName VARCHAR(40) NOT NULL,
-    Phone VARCHAR(24) DEFAULT NULL
-);
+-- select * from student;
 
-CREATE TABLE suppliers (
-    SupplierID INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    CompanyName VARCHAR(40) NOT NULL,
-    ContactName VARCHAR(30) DEFAULT NULL,
-    ContactJobTitle VARCHAR(30) DEFAULT NULL,
-    Address VARCHAR(60) DEFAULT NULL,
-    Phone VARCHAR(24) DEFAULT NULL
-);
+-- show triggers;
 
-CREATE TABLE orderdetails (
-    OrderID INT(11) NOT NULL,
-    ProductID INT(11) NOT NULL,
-    UnitPrice DECIMAL(10, 4) NOT NULL DEFAULT 0.0000,
-    Quantity SMALLINT(2) NOT NULL DEFAULT 1,
-    PRIMARY KEY (OrderID, ProductID)
-);
+-- drop trigger if EXISTS add_marks;
 
-DESC customers;
+-- create or replace trigger add_marks before insert on student 
+-- for each row set new.marks =new.marks+100; 
 
-DESC employees;
+/*
+Create a Procedure to display order details of given customerID like ordered, orderDate , RequiredDate, ShippedDat
+Create a procedure to accept a customerID and display the customer order history(productname and how much quantity ordered for that particular product)
+Create a procedure to display Ten Most Expensive Products Columns should be displayed Productname & Unit price
+*/
 
-DESC orders;
-
-DESC categories;
-
-DESC products;
-
-DESC shippers;
-
-DESC suppliers;
-
-DESC orderdetails;
