@@ -1,39 +1,30 @@
-# Given key and value pairs, 'key' is the name of the college and
-# 'value' is the list of every-year placements done in last few years(in hundreds).
+'''
+Input: num = 58, k = 9
+Output: 2
+Explanation:
+One valid set is [9,49], as the sum is 58 and each integer has a units digit of 9.
+Another valid set is [19,39].
+It can be shown that 2 is the minimum possible size of a valid set.
+'''
 
-# Help the placement officer in finding the year of max placements done in colleges.
-# (year start from zero)
-
-
-# Input
-# 3              ------> number of colleges
-# kmit 5 3 6 2  //key=college-name, value=list of placements(in hundreds) every year.
-# ngit 1 8 5 3    //
-# kmec 9 1 3 5  //
-# Expected output
-# kmit 2   ----> in kmit max placements done in the year 2 (index of 6)
-# ngit 1   ---> in ngit  max placements done in the year 1 (index of 8)
-# kmec 0   ---> in kmec  max placements done in the year 0 (index of 9)
-# ----------------
-# Input
-# 4
-# ksjc 2 6 8 5 1 3 4
-# ngit 4 9 7 6
-# kmit 7 4 1 9 2
-# kmec 5 3 2 1
-# Expected output
-# ksjc 2
-# ngit 1
-# kmit 3
-# kmec 0
+num = 37
+k = 2
 
 
-n = int(input())
-l = []
-for i in range(n):
-    d = {}
-    str = input().split()
-    d["key"]=str[0]
-    d["pl"]=str[1:]
-    l.append(d)
-print(*[i for i in l], sep='\n')
+# class Solution:
+#     def minimumNumbers(self, num: int, k: int) -> int:
+l = [i for i in range(1, num + 1)]
+l2 = []
+for i in l:
+    i = str(i)
+    if int(i[-1]) == k:
+        l2.append(i)
+count = 0
+# print(l2)
+if len(l2) == 0:
+    count = -1
+else:
+    for i in range(int(len(l2) / 2)):
+        if int(l2[i]) + int(l2[-i - 1]) == num:
+            count += 1
+print(count)
