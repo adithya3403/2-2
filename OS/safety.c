@@ -60,7 +60,7 @@ void check_request(int pno, int p, int r, int req[r], int al[p][r], int max[p][r
 
 int main() {
     int p, r;
-    printf("Enter number of processors : ");
+    printf("Enter number of processes : ");
     scanf("%d", &p);
     printf("Enter number of resources : ");
     scanf("%d", &r);
@@ -110,7 +110,7 @@ int main() {
 Sample Output :
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ gcc safety.c -o safety safety
 adithya@Adithya:/mnt/c/Users/ADITHYA/Documents/GitHub/VSCODE-FILES/OS$ ./safety
-Enter number of processors : 5
+Enter number of processes : 5
 Enter number of resources : 4
 Enter Allocation Matrix :
 2 0 0 1
