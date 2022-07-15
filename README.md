@@ -1,6 +1,6 @@
 # VSCODE-FILES
 
-OS CODES
+### [OS CODES]
 - Experiment 2
     - a
         - [Pipes](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/pipes.c)
@@ -21,3 +21,21 @@ OS CODES
 - Experiment 5
     - [Paging]()
     - [Segmentation]()
+
+
+
+### [JAVA CODES]
+- Experiment 1
+    - [(k+1)*k](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1a.java)
+    - [gapful-num](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1b.java)
+    - [cricket-pension](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1c.java)
+- Experiment 2 - [Resistance](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q2.java)
+- Experiment 3
+    - [max-diff-in-an-array](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q3a.java)
+    - [spiral-matrix](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q3b.java)
+    - [rain-water](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q3c.java)
+- Experiment 4
+    - [longest-common-subsequence](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4a.java)
+    - [merged-string](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4b.java)
+    - [amazon](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4c.java)
+- Experiment 5 - [MyRectangle](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q5.java)
