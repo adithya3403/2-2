@@ -1,4 +1,4 @@
-# VSCODE-FILES
+# VSCODE FILES
 
 ## [OS CODES]
 - Experiment 2
@@ -19,8 +19,8 @@
 - Experiment 4
     - [Banker's-Algorithm](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/safety.c)
 - Experiment 5
-    - [Paging]()
-    - [Segmentation]()
+    - Paging
+    - Segmentation
 
 
 
@@ -40,18 +40,18 @@
     - [amazon](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4c.java)
 - Experiment 5 - [MyRectangle](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q5.java)
 - Experiment 6
-    - [hash-table-name-and-phone-no.]()
-    - [logfile-survey]()
+    - [hash-table-name-and-phone-no.](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q6a.java)
+    - [logfile-survey](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q6b.java)
 - Experiment 7
-    - [Addition()]()
-    - [FizzBuzz]()
+    - [Addition()](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q7a.java)
+    - [FizzBuzz](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q7b.java)
 - Experiment 8
-    - [Employee-exp]()
-    - [common-words]()
-- Experiment 9
-    - [fCount-HashMap]()
-    - [HashMap-key/value-pairs]()
+    - [Employee-exp](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q8a.java)
+    - [common-words](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q8b.java)
+- Experiment 9 (HashMap)
+    - [fCount](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q9a.java)
+    - [key/value-pairs](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q9b.java)
 - Experiment 10 (JDBC)
-    - [Employee-table]()
-    - [Dallas]()
-    - [dno, dname, dloc]()
+    - [Employee-table](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q10a.java)
+    - [Dallas](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q10b.java)
+    - [dno, dname, dloc](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q10c.java)
