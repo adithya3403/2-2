@@ -1,6 +1,6 @@
 # VSCODE-FILES
 
-### [OS CODES]
+## [OS CODES]
 - Experiment 2
     - a
         - [Pipes](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/pipes.c)
@@ -24,7 +24,7 @@
 
 
 
-### [JAVA CODES]
+## [JAVA CODES]
 - Experiment 1
     - [(k+1)*k](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1a.java)
     - [gapful-num](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1b.java)
@@ -39,3 +39,19 @@
     - [merged-string](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4b.java)
     - [amazon](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q4c.java)
 - Experiment 5 - [MyRectangle](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q5.java)
+- Experiment 6
+    - [hash-table-name-and-phone-no.]()
+    - [logfile-survey]()
+- Experiment 7
+    - [Addition()]()
+    - [FizzBuzz]()
+- Experiment 8
+    - [Employee-exp]()
+    - [common-words]()
+- Experiment 9
+    - [fCount-HashMap]()
+    - [HashMap-key/value-pairs]()
+- Experiment 10 (JDBC)
+    - [Employee-table]()
+    - [Dallas]()
+    - [dno, dname, dloc]()
