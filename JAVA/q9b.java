@@ -12,45 +12,67 @@
 // (such as the value "Fine" which is mapped to by different keys in the two
 // different HashMaps) would also not count as a common key/value pair between
 // the two HashMaps.
+// You job is to write a method:
+// public int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2)
+// that is passed two objects of type HashMap<String, String> and returns the number of common
+// key/value pairs between the two HashMaps.
 
 import java.util.*;
 
 public class q9b {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
+        HashMap<String, String> map1 = new HashMap<String, String>();
+        HashMap<String, String> map2 = new HashMap<String, String>();
         System.out.print("Enter how many pairs in HashMap 1 : ");
-        int n1 = sc.nextInt();
-        HashMap<String, String> hm1 = new HashMap<String, String>();
-        for (int i = 0; i < n1; i++)
-            hm1.put(sc.next(), sc.next());
+        int m1 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter your " + m1 + " pairs of String ");
+        for (int i = 0; i < m1; i++) {
+            String pairs[] = sc.nextLine().split(" ");
+            map1.put(pairs[0], pairs[1]);
+        }
         System.out.print("Enter how many pairs in HashMap 2 : ");
-        int n2 = sc.nextInt();
-        HashMap<String, String> hm2 = new HashMap<String, String>();
-        for (int i = 0; i < n2; i++)
-            hm2.put(sc.next(), sc.next());
-        int c = 0;
-        for (Map.Entry<String, String> m : hm1.entrySet())
-            if (hm2.containsKey(m.getKey()))
-                if (hm2.get(m.getKey()).equals(m.getValue()))
-                    c++;
-        System.out.println("The number of key/value pairs are : " + c);
+        int m2 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter your " + m2 + " pairs of String ");
+        for (int i = 0; i < m2; i++) {
+            String pairs[] = sc.nextLine().split(" ");
+            map2.put(pairs[0], pairs[1]);
+        }
+        int result = commonKeyValuePairs(map1, map2);
+        System.out.println("The number of key/value pairs are : " + result);
         sc.close();
+    }
+
+    public static int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2) {
+        int c = 0;
+        for (String key : map1.keySet()) {
+            if (map2.containsKey(key)) {
+                if (map1.get(key).equals(map2.get(key))) {
+                    c++;
+                }
+            }
+        }
+        return c;
     }
 }
 
-// EXPECTED OUTPUT
-// Enter how many pairs in HashMap 1 : 5
-// Enter your 5 pair of String
-// Alice Healthy
-// Mary Ecstatic
-// Bob Happy
-// Chunck Fine
-// Felix Sick
-// Enter how many pairs in HashMap 2 : 5
-// Enter your 5 pair of String
-// Mary Ecstatic
-// Felix Healthy
-// Ricardo Superb
-// Tam Fine
-// Bob Happy
-// The number of key/value pairs are : 2
+/*
+EXPECTED OUTPUT
+Enter how many pairs in HashMap 1 : 5
+Enter your 5 pairs of String 
+Alice Healthy
+Mary Ecstatic
+Bob Happy
+Chunck Fine
+Felix Sick
+Enter how many pairs in HashMap 2 : 5
+Enter your 5 pairs of String 
+Mary Ecstatic
+Felix Healthy
+Ricardo Superb
+Tam Fine
+Bob Happy
+The number of key/value pairs are : 2
+*/
