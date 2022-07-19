@@ -7,36 +7,44 @@
 import java.util.*;
 
 public class q9a {
-    static void fCount(String str) {
-        HashMap<Character, Integer> map = new LinkedHashMap<>();
-        int n = str.length();
-        for (int i = 0; i < n; i++) {
-            char c = str.charAt(i);
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) + 1);
-            } else {
-                map.put(c, 1);
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string : ");
+        String str = sc.next();
+        Map<Character, Integer> result = new HashMap<Character, Integer>();
+        result = fCount(str);
+        for (int i = 0; i < str.length(); i++) {
+            char x = str.charAt(i);
+            if (result.get(x) != 0) {
+                System.out.print(x + "-" + result.get(x) + " ");
+                result.put(x, 0);
             }
         }
-        for (Map.Entry<Character, Integer> m : map.entrySet()) {
-            System.out.print(m.getKey() + "-" + m.getValue() + " ");
-        }
+        System.out.println();
+        sc.close();
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        fCount(str);
-        sc.close();
+    public static Map<Character, Integer> fCount(String str) {
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        for (int i = 0; i < str.length(); i++) {
+            if (map.containsKey(str.charAt(i))) {
+                map.put(str.charAt(i), map.get(str.charAt(i)) + 1);
+            } else {
+                map.put(str.charAt(i), 1);
+            }
+        }
+        return map;
     }
 }
 
-// EXPECTED OUTPUT
+/*
+EXPECTED OUTPUT
 
-// Run 1:
-// Enter a string:
-// hello h-1 e-1 l-2 o-1
+Run 1:
+Enter a string:hello
+h-1 e-1 l-2 o-1
 
-// Run 2:
-// Enter a string:kmit
-// k-1 m-1 i-1 t-1
+Run 2:
+Enter a string:kmit
+k-1 m-1 i-1 t-1
+*/
