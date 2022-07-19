@@ -1,59 +1,38 @@
-// C++ implementation of worst - Fit algorithm
 #include <bits/stdc++.h>
 using namespace std;
-
-// Function to allocate memory to blocks as per worst fit
-// algorithm
-void worstFit(int blockSize[], int m, int processSize[],
-              int n) {
-    // Stores block id of the block allocated to a
-    // process
-    int allocation[n];
-
-    // Initially no block is assigned to any process
-    memset(allocation, -1, sizeof(allocation));
-
-    // pick each process and find suitable blocks
-    // according to its size ad assign to it
-    for (int i = 0; i < n; i++) {
-        // Find the best fit block for current process
-        int wstIdx = -1;
-        for (int j = 0; j < m; j++) {
-            if (blockSize[j] >= processSize[i]) {
-                if (wstIdx == -1)
-                    wstIdx = j;
-                else if (blockSize[wstIdx] < blockSize[j])
-                    wstIdx = j;
+int pageFaults(int n, int c, int pages[]) {
+    int count = 0;
+    vector<int> v;
+    unordered_map<int, int> mp;
+    int i;
+    for (i = 0; i <= n - 1; i++) {
+        auto it = find(v.begin(), v.end(), pages[i]);
+        if (it == v.end()) {
+            if (v.size() == c) {
+                mp[v[0]]--;
+                v.erase(v.begin());
             }
+            v.push_back(pages[i]);
+            mp[pages[i]]++;
+            count++;
+        } else {
+            mp[pages[i]]++;
+            v.erase(it);
+            v.push_back(pages[i]);
         }
-
-        // If we could find a block for current process
-        if (wstIdx != -1) {
-            // allocate block j to p[i] process
-            allocation[i] = wstIdx;
-
-            // Reduce available memory in this block.
-            blockSize[wstIdx] -= processSize[i];
+        int k = v.size() - 2;
+        while (mp[v[k]] > mp[v[k + 1]] && k > -1) {
+            swap(v[k + 1], v[k]);
+            k--;
         }
     }
-
-    cout << "\nProcess No.\tProcess Size\tBlock no.\n";
-    for (int i = 0; i < n; i++) {
-        cout << " " << i + 1 << "\t\t" << processSize[i] << "\t\t";
-        if (allocation[i] != -1)
-            cout << allocation[i] + 1;
-        else
-            cout << "Not Allocated";
-        cout << endl;
-    }
+    return count;
 }
-
-// Driver code
 int main() {
-    int blockSize[] = {400, 600, 700, 1000, 800};
-    int processSize[] = {212, 500, 450, 100};
-    int m = sizeof(blockSize) / sizeof(blockSize[0]);
-    int n = sizeof(processSize) / sizeof(processSize[0]);
-    worstFit(blockSize, m, processSize, n);
+    int pages[] = {1, 2, 3, 4, 2, 1, 5, 6, 2, 1, 2, 3, 7, 6, 3, 2, 1, 2, 3, 6};
+    int n = 20, c = 3;
+    cout << "Page Faults = " << pageFaults(n, c, pages) << endl;
+    cout << "Page Hits = " << n - pageFaults(n, c, pages);
+    cout << "\n";
     return 0;
 }

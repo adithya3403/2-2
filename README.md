@@ -20,8 +20,6 @@
     - [Banker's-Algorithm](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/safety.c)
 - Experiment 5
     - [Paging](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/paging.c)
-    - Segmentation
-
 
 
 ## [JAVA CODES]
