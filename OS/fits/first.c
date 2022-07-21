@@ -2,37 +2,39 @@
 
 #include <stdio.h>
 void main() {
-    int bsize[10], psize[10], bno, pno, flags[10], allocation[10], i, j;
-    for (i = 0; i < 10; i++) {
-        flags[i] = 0;
-        allocation[i] = -1;
-    }
-    printf("Enter no of blocks : ");
-    scanf("%d", &bno);
-    printf("Enter the size of each block : ");
-    for (i = 0; i < bno; i++)
+    int bs, ps, bsize[10], psize[10], all[10], flag[10];
+    printf("Enter the number of blocks: ");
+    scanf("%d", &bs);
+    printf("Enter the size of each block: ");
+    for (int i = 0; i < bs; i++) {
         scanf("%d", &bsize[i]);
-    printf("Enter the no of processes : ");
-    scanf("%d", &pno);
-    printf("Enter the size of each process : ");
-    for (i = 0; i < pno; i++)
+    }
+    printf("Enter the number of processes: ");
+    scanf("%d", &ps);
+    printf("Enter the size of each process: ");
+    for (int i = 0; i < ps; i++) {
         scanf("%d", &psize[i]);
-    for (int i = 0; i < pno; i++) {
-        for (int j = 0; j < bno; j++) {
-            if (bsize[j] >= psize[i]) {
-                allocation[i] = j;
-                bsize[j] -= psize[i];
+    }
+    for (int i = 0; i < ps; i++) {
+        all[i] = -1;
+        flag[i] = 0;
+    }
+    for (int i = 0; i < ps; i++) {
+        for (int j = 0; j < bs; j++) {
+            if (!flag[j] && bsize[j] >= psize[i]) {
+                all[i] = j;
+                flag[j] = 1;
                 break;
             }
         }
     }
-    printf("\n processno \t process size\t Block no\n");
-    for (int i = 0; i < pno; i++) {
-        printf("%d\t\t%d\t\t", i + 1, psize[i]);
-        if (allocation[i] != -1)
-            printf("%d\n", allocation[i] + 1);
+    printf("\nProcess No.\tProcess Size\tBlock no.\n");
+    for (int i = 0; i < ps; i++) {
+        printf("%d \t\t\t %d \t\t\t", i + 1, psize[i]);
+        if (all[i] != -1)
+            printf("%d\n", all[i] + 1);
         else
-            printf("Not allocated\n");
+            printf("Not allpcated\n");
     }
 }
 
@@ -47,6 +49,6 @@ Enter the size of each process : 212 417 112 426
 processno       process size    Block no
 1               212             2
 2               417             5
-3               112             2
+3               112             3
 4               426             Not allocated
 */
