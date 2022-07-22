@@ -26,14 +26,24 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 class Data {
     String plang, ip, timestamp;
+
     void setData(String plang, String ip, String timestamp) {
         this.plang = plang;
         this.ip = ip;
         this.timestamp = timestamp;
     }
-    String getPlang() { return this.plang; }
-    String getIP() { return this.ip; }
-    String getTimestamp() { return this.timestamp; }
+
+    String getPlang() {
+        return this.plang;
+    }
+
+    String getIP() {
+        return this.ip;
+    }
+
+    String getTimestamp() {
+        return this.timestamp;
+    }
 }
 
 public class q6b {
@@ -42,31 +52,39 @@ public class q6b {
         FileReader fr = new FileReader("logfile.txt");
         BufferedReader br = new BufferedReader(fr);
         String line;
-        String[] data;
         List<Data> al = new CopyOnWriteArrayList<Data>();
         while ((line = br.readLine()) != null) {
-            data = line.split("\t");
+            String[] arr = line.split("\\s+");
             Data d = new Data();
-            d.setData(data[0], data[1], data[2]);
+            d.setData(arr[0], arr[1], arr[2]);
             al.add(d);
         }
-        for (Data i : al) {
-            System.out.println(i.getPlang() + "," + i.getIP() + "," + i.getTimestamp());
-        }
-        for (Data d : al) {
-            if (d.getPlang().equals(d.plang)) {
-                if (d.getIP().equals(d.ip)) {
-                    al.remove(d);
+        for (int i = 0; i < al.size(); i++) {
+            for (int j = i + 1; j < al.size(); j++) {
+                if (al.get(i).getIP().equals(al.get(j).getIP())) {
+                    al.remove(j);
                 }
             }
         }
-        for (Data i : al) {
-            System.out.println(i.getPlang() + "," + i.getIP() + "," + i.getTimestamp());
+        Map<String, Integer> map = new LinkedHashMap<String, Integer>();
+        for (int i = 0; i < al.size(); i++) {
+            String plang = al.get(i).getPlang();
+            if (map.containsKey(plang)) {
+                map.put(plang, map.get(plang) + 1);
+            } else {
+                map.put(plang, 1);
+            }
         }
-        sc.close();
+        Set<String> keys = map.keySet();
+        for (String key : keys) {
+            System.out.println(key + " " + map.get(key));
+        }
         br.close();
+        sc.close();
     }
 }
 
 // EXPECTED OUTPUT:
-// PHP 2 C# 1 Prolog 1
+// PHP 2
+// C# 1
+// Prolog 1
