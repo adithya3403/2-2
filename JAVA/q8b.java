@@ -13,37 +13,28 @@ public class q8b {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         String arr[] = s.split(" ");
-        Map<String, Integer> ch = new LinkedHashMap<String, Integer>();
+        Map<String, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < arr.length; i++) {
             String x = arr[i];
-            if (ch.containsKey(x)) {
-                int c = ch.get(x);
-                c++;
-                ch.put(x, c);
-            } else {
-                ch.put(x, 1);
-            }
+            if (map.containsKey(x))
+                map.put(x, map.get(x) + 1);
+            else
+                map.put(x, 1);
         }
-        ArrayList<Integer> al = new ArrayList<Integer>();
-        Set<String> ss = ch.keySet();
-        for (String i : ss) {
-            if (al.contains(ch.get(i))) {
-            } else {
-                al.add(ch.get(i));
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                if (o1.getValue() == o2.getValue()) {
+                    return o1.getKey().compareTo(o2.getKey());
+                } else {
+                    return o2.getValue() - o1.getValue();
+                }
             }
+        });
+        for (Map.Entry<String, Integer> i : list) {
+            System.out.print(i.getKey() + " ");
         }
-        Collections.sort(al);
-        for (int i = al.size() - 1; i >= 0; i--) {
-            int temp = al.get(i);
-            ArrayList<String> tal = new ArrayList<>();
-            for (Map.Entry<String, Integer> l1 : ch.entrySet()) {
-                if (l1.getValue() == temp)
-                    tal.add(l1.getKey());
-            }
-            Collections.sort(tal);
-            for (String s1 : tal)
-                System.out.print(s1 + " ");
-        }
+        System.out.println();
         sc.close();
     }
 }
