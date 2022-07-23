@@ -22,27 +22,14 @@
 
 import java.util.*;
 import java.io.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 class Data {
-    String plang, ip, timestamp;
+    String lang, ip, ts;
 
-    void setData(String plang, String ip, String timestamp) {
-        this.plang = plang;
+    void setData(String lang, String ip, String ts) {
+        this.lang = lang;
         this.ip = ip;
-        this.timestamp = timestamp;
-    }
-
-    String getPlang() {
-        return this.plang;
-    }
-
-    String getIP() {
-        return this.ip;
-    }
-
-    String getTimestamp() {
-        return this.timestamp;
+        this.ts = ts;
     }
 }
 
@@ -52,7 +39,7 @@ public class q6b {
         FileReader fr = new FileReader("logfile.txt");
         BufferedReader br = new BufferedReader(fr);
         String line;
-        List<Data> al = new CopyOnWriteArrayList<Data>();
+        List<Data> al = new ArrayList<Data>();
         while ((line = br.readLine()) != null) {
             String[] arr = line.split("\\s+");
             Data d = new Data();
@@ -61,22 +48,23 @@ public class q6b {
         }
         for (int i = 0; i < al.size(); i++) {
             for (int j = i + 1; j < al.size(); j++) {
-                if (al.get(i).getIP().equals(al.get(j).getIP())) {
+                if ((al.get(i).ip).equals(al.get(j).ip)) {
+                    al.remove(j);
+                } else if (Math.abs(Long.parseLong(al.get(i).ts) - Long.parseLong(al.get(j).ts)) > 20000) {
                     al.remove(j);
                 }
             }
         }
         Map<String, Integer> map = new LinkedHashMap<String, Integer>();
         for (int i = 0; i < al.size(); i++) {
-            String plang = al.get(i).getPlang();
-            if (map.containsKey(plang)) {
-                map.put(plang, map.get(plang) + 1);
+            String lang = al.get(i).lang;
+            if (map.containsKey(lang)) {
+                map.put(lang, map.get(lang) + 1);
             } else {
-                map.put(plang, 1);
+                map.put(lang, 1);
             }
         }
-        Set<String> keys = map.keySet();
-        for (String key : keys) {
+        for (String key : map.keySet()) {
             System.out.println(key + " " + map.get(key));
         }
         br.close();
