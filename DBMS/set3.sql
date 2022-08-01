@@ -40,13 +40,17 @@ SELECT
     ProductName,
     UnitPrice
 FROM Products
-WHERE UnitPrice IN (
-        SELECT
-            UnitPrice > AVG(UnitPrice)
+WHERE UnitPrice > (
+        SELECT AVG(UnitPrice)
         FROM Products
     );
 
 /*
  output:
- empty set(0.01 sec)
++-----------+-------------+------------+
+| productId | productName | unitprice  |
++-----------+-------------+------------+
+|      6001 | computer    | 25000.0000 |
+|      6002 | laptop      | 45000.0000 |
++-----------+-------------+------------+
  */
