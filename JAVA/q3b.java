@@ -4,7 +4,7 @@
 // the following example 
 // input:5 
 // output:
-// 1  2  3  4  5
+// 1 2 3 4 5
 // 16 17 18 19 6
 // 15 24 25 20 7
 // 14 23 22 21 8
@@ -16,28 +16,25 @@ public class q3b {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int rowBegin = 0;
-        int rowEnd = n - 1;
-        int colBegin = 0;
-        int colEnd = n - 1;
+        int rb = 0, re = n - 1, cb = 0, ce = n - 1, k = 1;
         int[][] a = new int[n][n];
-        while (rowBegin <= rowEnd && colBegin <= colEnd) {
-            for (int j = colBegin; j <= colEnd; j++)
-                a[rowBegin][j] = sc.nextInt();
-            rowBegin++;
-            for (int j = rowBegin; j <= rowEnd; j++)
-                a[j][colEnd] = sc.nextInt();
-            colEnd--;
-            if (rowBegin <= rowEnd) {
-                for (int j = colEnd; j >= colBegin; j--)
-                    a[rowEnd][j] = sc.nextInt();
+        while (rb <= re && cb <= ce) {
+            for (int i = cb; i <= ce; i++)
+                a[rb][i] = k++;
+            rb++;
+            for (int i = rb; i <= re; i++)
+                a[i][ce] = k++;
+            ce--;
+            if (rb <= re) {
+                for (int i = ce; i >= cb; i--)
+                    a[re][i] = k++;
             }
-            rowEnd--;
-            if (colBegin <= colEnd) {
-                for (int j = rowEnd; j >= rowBegin; j--)
-                    a[j][colBegin] = sc.nextInt();
+            re--;
+            if (cb <= ce) {
+                for (int i = re; i >= rb; i--)
+                    a[i][cb] = k++;
             }
-            colBegin++;
+            cb++;
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -52,8 +49,7 @@ public class q3b {
 // EXPECTED OUTPUT:
 // Sample Input:
 // 3
-// 2 4 5 3 6 8 1 9 7
 // Sample Output:
-// 2 4 5
-// 9 7 3 
-// 1 8 6
+// 1 2 3 
+// 8 9 4
+// 7 6 5
