@@ -6,15 +6,10 @@ public class q1a {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (i == (j + 1) * j) {
-                    System.out.println(i);
-                }
-            }
+            for (int j = 1; j <= n; j++)
+                if (i == (j + 1) * j) System.out.print(i+" ");
         }
-        sc.close();
     }
 }
 // Sample Input:10
-// Sample Output:2
-// 6
+// Sample Output:2 6
