@@ -9,9 +9,7 @@
 // 15 24 25 20 7
 // 14 23 22 21 8
 // 13 12 11 10 9
-
 import java.util.*;
-
 public class q3b {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,21 +17,15 @@ public class q3b {
         int rb = 0, re = n - 1, cb = 0, ce = n - 1, k = 1;
         int[][] a = new int[n][n];
         while (rb <= re && cb <= ce) {
-            for (int i = cb; i <= ce; i++)
-                a[rb][i] = k++;
+            for (int i = cb; i <= ce; i++) a[rb][i] = k++;
             rb++;
-            for (int i = rb; i <= re; i++)
-                a[i][ce] = k++;
+            for (int i = rb; i <= re; i++) a[i][ce] = k++;
             ce--;
-            if (rb <= re) {
-                for (int i = ce; i >= cb; i--)
-                    a[re][i] = k++;
-            }
+            if (rb <= re)
+                for (int i = ce; i >= cb; i--) a[re][i] = k++;
             re--;
-            if (cb <= ce) {
-                for (int i = re; i >= rb; i--)
-                    a[i][cb] = k++;
-            }
+            if (cb <= ce)
+                for (int i = re; i >= rb; i--) a[i][cb] = k++;
             cb++;
         }
         for (int i = 0; i < n; i++) {
@@ -42,14 +34,5 @@ public class q3b {
             }
             System.out.println();
         }
-        sc.close();
     }
 }
-
-// EXPECTED OUTPUT:
-// Sample Input:
-// 3
-// Sample Output:
-// 1 2 3 
-// 8 9 4
-// 7 6 5
