@@ -22,8 +22,7 @@ public class q1b {
     }
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println(gupful(n));
+        System.out.println(gupful(sc.nextInt()));
     }
 }
 // input=25
