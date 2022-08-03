@@ -2,10 +2,8 @@
 // file into Hash Table where data is organized as one line per record and each
 // field in record are separated by a tab(\t).It takes a name or phone number as
 // input and prints the corresponding other value from hash table.
-
 import java.util.*;
 import java.io.*;
-
 public class q6a {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -20,29 +18,20 @@ public class q6a {
         System.out.println(ht);
         System.out.print("Enter name: ");
         name = sc.next();
-        if (ht.containsKey(name)) {
-            System.out.println("Mobile number is " + ht.get(name));
-        } else {
-            System.out.println("Not Found");
-        }
+        if (ht.containsKey(name)) System.out.println("Mobile number is " + ht.get(name));
+        else System.out.println("Not Found");
         System.out.print("Enter mobile number: ");
         mobile = sc.next();
         if (ht.containsValue(mobile)) {
             Set<String> s1 = ht.keySet();
             for (String s : s1) {
-                if (mobile.equals(ht.get(s))) {
-                    System.out.println("Name is " + s);
-                }
+                if (mobile.equals(ht.get(s))) System.out.println("Name is " + s);
             }
         } else {
             System.out.println("Not Found");
         }
-        br.close();
-        sc.close();
     }
 }
-
-// EXPECTED OUTPUT :
 // {Suresh=9876543210, Tej=9393320400, Ramesh=0123456789}
 // Enter name: Suresh 
 // Mobile number is 9876543210
