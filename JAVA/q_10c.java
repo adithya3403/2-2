@@ -9,7 +9,6 @@
 // | dname      | varchar(50)   | NO    |       | NULL      |       |
 // | location   | varchar(50)   | NO    |       | NULL      |       |
 // +------------+---------------+-------+-------+-----------+-------+
-
 // Sample Database :
 // mysql> select * from dept;
 // +--------+-------+----------+
@@ -20,10 +19,8 @@
 // |     12 | IT    | Denton   |
 // +--------+-------+----------+
 // 3 rows in set (0.00 sec)
-
 import java.sql.*;
 import java.util.*;
-
 public class q_10c {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
@@ -43,34 +40,17 @@ public class q_10c {
             pstmt.setString(2, dname);
             pstmt.setString(3, dloc);
             int status = pstmt.executeUpdate();
-            if (status > 0) {
-                System.out.println("Record is inserted successfully !!!");
-            }
+            if (status > 0) System.out.println("Record is inserted successfully !!!");
             con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        } catch (Exception e) { System.out.println(e); }
         input.close();
     }
 }
-
 // Expected Output:
 // Enter the Department No. : 3
 // Enter the Department Name : Mechanical
 // Enter the Department Location : Dallas
 // Record is inserted successfully !!!
-
-// D:\VSCODE-FILES\JAVA>mysql -u root
-// Welcome to the MySQL monitor.  Commands end with ; or \g.
-// Your MySQL connection id is 29
-// Server version: 5.5.5-10.4.22-MariaDB mariadb.org binary distribution
-// Copyright (c) 2000, 2022, Oracle and/or its affiliates.
-// Oracle is a registered trademark of Oracle Corporation and/or its
-// affiliates. Other names may be trademarks of their respective
-// owners.
-// Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-// mysql> use test;
-// Database changed
 // mysql> select * from dept;
 // +--------+------------+----------+
 // | deptno | dname      | location |
@@ -80,4 +60,3 @@ public class q_10c {
 // |      5 | CSE        | Dallas   |
 // |     12 | IT         | Denton   |
 // +--------+------------+----------+
-// 4 rows in set (0.00 sec)
