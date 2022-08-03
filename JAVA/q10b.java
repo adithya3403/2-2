@@ -57,10 +57,10 @@ import java.sql.*;
 public class q10b {
     public static void main(String args[]) {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "student", "student");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
             Statement stmt = con.createStatement();
-            String sql = "select ename from emp e, dept d  wheree.deptno=d.deptno and location = 'Dallas'";
+            String sql = "select ename from emp e, dept d  where e.deptno=d.deptno and location = 'Dallas'";
             ResultSet rs = stmt.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
             System.out.println("");

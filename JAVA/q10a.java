@@ -49,10 +49,10 @@ public class q10a {
         System.out.print("Enter the Department Number : ");
         int deptNum = input.nextInt();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "student", "student");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
             Statement stmt = con.createStatement();
-            String sql = "select ename from emp where deptno = " + deptNum + " order by enameasc";
+            String sql = "select ename from emp where deptno = " + deptNum + " order by ename asc";
             ResultSet rs = stmt.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
             System.out.println("");
@@ -84,6 +84,7 @@ public class q10a {
 // EXPECTED OUTPUT :
 // Enter the Department Number : 5
 // ename
+// 
 // Akhilesh
 // Mahesh
 // Nitesh

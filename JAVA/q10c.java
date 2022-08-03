@@ -34,8 +34,8 @@ public class q10c {
         System.out.print("Enter the Department Location : ");
         String dloc = input.next();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "student", "student");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
             PreparedStatement pstmt = null;
             String query = "INSERT INTO dept(deptno, dname, location)" + "VALUES (?, ?, ?)";
             pstmt = con.prepareStatement(query);
@@ -60,7 +60,17 @@ public class q10c {
 // Enter the Department Location : Dallas
 // Record is inserted successfully !!!
 
-// After Insertion, database would be as below:
+// D:\VSCODE-FILES\JAVA>mysql -u root
+// Welcome to the MySQL monitor.  Commands end with ; or \g.
+// Your MySQL connection id is 29
+// Server version: 5.5.5-10.4.22-MariaDB mariadb.org binary distribution
+// Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+// Oracle is a registered trademark of Oracle Corporation and/or its
+// affiliates. Other names may be trademarks of their respective
+// owners.
+// Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+// mysql> use test;
+// Database changed
 // mysql> select * from dept;
 // +--------+------------+----------+
 // | deptno | dname      | location |
