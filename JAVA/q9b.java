@@ -28,7 +28,7 @@ public class q9b {
             String pairs[] = sc.nextLine().split(" ");
             map2.put(pairs[0], pairs[1]);
         }
-        System.out.println("The number of key/value pairs are : " + commonKeyValuePairs(map1, map2););
+        System.out.println("The number of key/value pairs are : " + commonKeyValuePairs(map1, map2));
     }
     public static int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2) {
         int c = 0;
