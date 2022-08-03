@@ -43,4 +43,5 @@ public class q2 {
         System.out.println(r1.getResistance());
     }
 }
+// output:
 // 20.0 K ohms
