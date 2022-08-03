@@ -6,12 +6,9 @@ import java.util.*;
 public class q4b {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        String w1 = sc.next();
-        String w2 = sc.next();
-        int n1 = w1.length();
-        int n2 = w2.length();
+        String w1 = sc.next(), w2 = sc.next();
+        int n1 = w1.length(), n2 = w2.length(), i1=0, i2=0;
         StringBuilder sb = new StringBuilder();
-        int i1 = 0, i2 = 0;
         while (i1 < n1 && i2 < n2) {
             sb.append(w1.charAt(i1++));
             sb.append(w2.charAt(i2++));
