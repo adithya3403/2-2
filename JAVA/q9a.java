@@ -8,20 +8,10 @@ public class q9a {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a string : ");
-        String str = sc.next();
-        Map<Character, Integer> result = new HashMap<Character, Integer>();
-        result = fCount(str);
-        for (int i = 0; i < str.length(); i++) {
-            char x = str.charAt(i);
-            if (result.get(x) != 0) {
-                System.out.print(x + "-" + result.get(x) + " ");
-                result.put(x, 0);
-            }
-        }
-        System.out.println();
+        System.out.println(fCount(sc.next()));
     }
     public static Map<Character, Integer> fCount(String str) {
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
         for (int i = 0; i < str.length(); i++) {
             if (map.containsKey(str.charAt(i))) map.put(str.charAt(i), map.get(str.charAt(i)) + 1);
             else map.put(str.charAt(i), 1);
