@@ -23,11 +23,8 @@ public class q7a {
             else throw new IllegalArgumentException();
             System.out.print("Enter Array Elements: ");
             for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
-            int resultarr[] = addition(arr);
-            System.out.println(Arrays.toString(resultarr));
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid Argument");
-        }
+            System.out.println(Arrays.toString(addition(arr)));
+        } catch (IllegalArgumentException e) {System.out.println("Invalid Argument");}
     }
 }
 // Enter Array Size: 5
