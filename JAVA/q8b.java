@@ -11,11 +11,10 @@ public class q8b {
         String arr[] = sc.nextLine().split(" ");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            String x = arr[i];
-            if (map.containsKey(x)) map.put(x, map.get(x) + 1);
-            else map.put(x, 1);
+            if (map.containsKey(arr[i])) map.put(arr[i], map.get(arr[i]) + 1);
+            else map.put(arr[i], 1);
         }
-        List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
                 if (o1.getValue() == o2.getValue()) return o1.getKey().compareTo(o2.getKey());
