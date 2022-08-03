@@ -41,9 +41,9 @@ import java.sql.*;
 import java.util.*;
 public class q_10a {
     public static void main(String args[]) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the Department Number : ");
-        int deptNum = input.nextInt();
+        int deptNum = sc.nextInt();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
