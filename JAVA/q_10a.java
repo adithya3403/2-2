@@ -43,7 +43,7 @@
 import java.sql.*;
 import java.util.*;
 
-public class q10a {
+public class q_10a {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the Department Number : ");
@@ -84,7 +84,6 @@ public class q10a {
 // EXPECTED OUTPUT :
 // Enter the Department Number : 5
 // ename
-// 
 // Akhilesh
 // Mahesh
 // Nitesh
