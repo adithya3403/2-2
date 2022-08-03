@@ -26,9 +26,9 @@ public class q1b {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(gupful(n));
+        sc.close();
     }
 }
-// EXPECTED OUTPUT:
 // case=1
 // input=25
 // output=100
