@@ -9,7 +9,6 @@
 // DB_URL = "jdbc:mysql://localhost/test";
 // Username - student
 // Password - student
-
 // emp schema;
 // +------------+---------------+------+-----+---------+-------+
 // | Field      | Type          | Null | Key | Default | Extra |
@@ -23,7 +22,6 @@
 // | comm       | decimal(10,2) | YES  |     | NULL    |       |
 // | deptno     | int(2)        | YES  | MUL | NULL    |       |
 // +------------+---------------+------+-----+---------+-------+
-
 // Sample Database :
 // mysql> select * from emp;
 // +-------+-----------+---------------+------+------------+----------+---------+--------+
@@ -39,10 +37,8 @@
 // |  1202 | Harish    | Data Analyst  |  102 | 2019-08-01 | 30000.00 | 2000.00 |     12 |
 // +-------+-----------+---------------+------+------------+----------+---------+--------+
 // 8 rows in set (0.00 sec)
-
 import java.sql.*;
 import java.util.*;
-
 public class q_10a {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
@@ -58,30 +54,23 @@ public class q_10a {
             System.out.println("");
             int numberOfColumns = rsmd.getColumnCount();
             for (int i = 1; i <= numberOfColumns; i++) {
-                if (i > 1)
-                    System.out.print("	");
+                if (i > 1) System.out.print("	");
                 String columnName = rsmd.getColumnName(i);
                 System.out.print(columnName);
             }
             System.out.println("");
             while (rs.next()) {
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    if (i > 1)
-                        System.out.print(",  ");
+                    if (i > 1) System.out.print(",  ");
                     String columnValue = rs.getString(i);
                     System.out.print(columnValue);
                 }
                 System.out.println("");
             }
             con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        input.close();
+        } catch (Exception e) { System.out.println(e); }
     }
 }
-
-// EXPECTED OUTPUT :
 // Enter the Department Number : 5
 // ename
 // Akhilesh
