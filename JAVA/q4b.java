@@ -15,8 +15,8 @@ public class q4b {
             sb.append(w1.charAt(i1++));
             sb.append(w2.charAt(i2++));
         }
-        while (i1 < w1.length()) {sb.append(w1.charAt(i1++));}
-        while (i2 < w2.length()) {sb.append(w2.charAt(i2++));}
+        while (i1 < n1) {sb.append(w1.charAt(i1++));}
+        while (i2 < n2) {sb.append(w2.charAt(i2++));}
         System.out.println(sb.toString());
     }
 }
