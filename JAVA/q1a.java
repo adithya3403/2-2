@@ -12,6 +12,7 @@ public class q1a {
                 }
             }
         }
+        sc.close();
     }
 }
 // Sample Input:10
