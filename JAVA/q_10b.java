@@ -54,7 +54,7 @@
 
 import java.sql.*;
 
-public class q10b {
+public class q_10b {
     public static void main(String args[]) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
