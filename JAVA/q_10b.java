@@ -2,7 +2,6 @@
 // in ascending order who are working in 
 // "Dallas" location using createStatement() 
 // Schema Given below :
-
 // emp schema;
 // +------------+---------------+------+-----+----------+-------+
 // | Field      | Type          | Null | Key | Default  | Extra |
@@ -16,7 +15,6 @@
 // | comm       | decimal(10,2) | YES  |     | NULL     |       |
 // | deptno     | int(2)        | YES  | MUL | NULL     |       |
 // +------------+---------------+------+-----+----------+-------+
-
 // dept schema 
 // +------------+-------------+------+------+---------+-------+
 // | Field      | Type        | Null | Key  | Default | Extra |
@@ -25,7 +23,6 @@
 // | dname      | varchar(50) | NO   |      | NULL    |       |
 // | location   | varchar(50) | NO   |      | NULL    |       |
 // +------------+-------------+------+------+---------+-------+
-
 // Sample Database :
 // mysql> select * from emp;
 // +-------+-----------+---------------+------+------------+----------+---------+--------+
@@ -41,7 +38,6 @@
 // |  1202 | Harish    | Data Analyst  |  102 | 2019-08-01 | 30000.00 | 2000.00 |     12 |
 // +-------+-----------+---------------+------+------------+----------+---------+--------+
 // 8 rows in set (0.00 sec)
-
 // mysql> select * from dept;
 // +--------+-------+----------+
 // | deptno | dname | location |
@@ -51,9 +47,7 @@
 // |     12 | IT    | Denton   |
 // +--------+-------+----------+
 // 3 rows in set (0.00 sec)
-
 import java.sql.*;
-
 public class q_10b {
     public static void main(String args[]) {
         try {
@@ -66,28 +60,23 @@ public class q_10b {
             System.out.println("");
             int numberOfColumns = rsmd.getColumnCount();
             for (int i = 1; i <= numberOfColumns; i++) {
-                if (i > 1)
-                    System.out.print("	");
+                if (i > 1) System.out.print("	");
                 String columnName = rsmd.getColumnName(i);
                 System.out.print(columnName);
             }
             System.out.println("");
             while (rs.next()) {
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    if (i > 1)
-                        System.out.print(",  ");
+                    if (i > 1) System.out.print(",  ");
                     String columnValue = rs.getString(i);
                     System.out.print(columnValue);
                 }
                 System.out.println("");
             }
             con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        } catch (Exception e) { System.out.println(e); }
     }
 }
-
 // Expected Output :
 // ename
 // Nitesh
