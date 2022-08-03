@@ -5,16 +5,13 @@
 // number that fits this description is 100. First digit is 1,
 // last digit is 0,forming 10,which is a factor of 100.
 // Therefore,100 is gupful.
-
 import java.util.*;
-
 public class q1b {
     private static boolean isGupful(int n) {
         String s = "" + n;
         int div = Integer.parseInt("" + s.charAt(0) + s.charAt(s.length() - 1));
         return n % div == 0;
     }
-
     public static int gupful(int n) {
         for (int i = 0; n - i > 100; i++) {
             boolean low = isGupful(n - i);
@@ -25,25 +22,16 @@ public class q1b {
         }
         return 100;
     }
-
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(gupful(n));
-        sc.close();
     }
 }
-
 // EXPECTED OUTPUT:
 // case=1
 // input=25
 // output=100
-
 // case=2
-// input=100
-// output=100
-
-// case=3
 // input=103
 // output=105
-
