@@ -8,8 +8,7 @@ import java.util.*;
 public class q8b {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        String arr[] = s.split(" ");
+        String arr[] = sc.nextLine().split(" ");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < arr.length; i++) {
             String x = arr[i];
@@ -24,7 +23,6 @@ public class q8b {
             }
         });
         for (Map.Entry<String, Integer> i : list) System.out.print(i.getKey() + " ");
-        System.out.println();
     }
 }
 // Sample Input: lets do one to do how to do
