@@ -11,53 +11,28 @@
 // 3. Thread C will call fizzbuzz() to check for divisibility of 3 and 5 and
 // outputs fizzbuzz
 // 4. Thread D will call number() which should only output the numbers
-
-import java.util.Scanner;
-
+import java.util.*;
 class A extends Thread {
-    public void run() {
-        System.out.print("fizz, ");
-    }
+    public void run() { System.out.print("fizz "); }
 }
-
 class B extends Thread {
-    public void run() {
-        System.out.print("buzz" + ", ");
-    }
+    public void run() { System.out.print("buzz "); }
 }
-
 class C extends Thread {
-    public void run() {
-        System.out.print("fizzbuzz" + ", ");
-    }
+    public void run() { System.out.print("fizzbuzz "); }
 }
-
 public class q7b {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter n value: ");
         int n = sc.nextInt();
         for (int i = 1; i <= n; i++) {
-            if (i % 15 == 0) {
-                C t1 = new C();
-                t1.start();
-                t1.join();
-            } else if (i % 5 == 0) {
-                B t2 = new B();
-                t2.start();
-                t2.join();
-            } else if (i % 3 == 0) {
-                A t3 = new A();
-                t3.start();
-                t3.join();
-            } else {
-                System.out.print(i + ", ");
-            }
+            if (i % 15 == 0) C t1 = new C(); t1.start(); t1.join();
+            else if (i % 5 == 0) B t2 = new B(); t2.start(); t2.join();
+            else if (i % 3 == 0) A t3 = new A(); t3.start(); t3.join();
+            else System.out.print(i + ", ");
         }
-        sc.close();
     }
 }
-
-// EXPECTED OUTPUT:
 // Enter n value: 20
-// 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz, 16, 17, fizz, 19, buzz,
+// 1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz
