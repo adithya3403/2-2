@@ -1,9 +1,6 @@
 // b.You have created a web-based survey of favorite programming languages and
 // are capturing the results into a text file named "logfile". The structure of
 // the text file is:
-
-// For example, here is a sample logfile of six entries:
-
 // The logfile is ordered by increasing timestamp. You are concerned that some
 // people are voting multiple times for the same item. To somewhat address this
 // problem, throw out any new votes for the same item that come from the same IP
@@ -19,20 +16,16 @@
 // PHP 2
 // C# 1
 // Prolog 1
-
 import java.util.*;
 import java.io.*;
-
 class Data {
     String lang, ip, ts;
-
     void setData(String lang, String ip, String ts) {
         this.lang = lang;
         this.ip = ip;
         this.ts = ts;
     }
 }
-
 public class q6b {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -48,31 +41,19 @@ public class q6b {
         }
         for (int i = 0; i < al.size(); i++) {
             for (int j = i + 1; j < al.size(); j++) {
-                if ((al.get(i).ip).equals(al.get(j).ip)) {
-                    al.remove(j);
-                } else if (Math.abs(Long.parseLong(al.get(i).ts) - Long.parseLong(al.get(j).ts)) > 20000) {
-                    al.remove(j);
-                }
+                if ((al.get(i).ip).equals(al.get(j).ip)) al.remove(j);
+                else if (Math.abs(Long.parseLong(al.get(i).ts) - Long.parseLong(al.get(j).ts)) > 20000) al.remove(j);
             }
         }
         Map<String, Integer> map = new LinkedHashMap<String, Integer>();
         for (int i = 0; i < al.size(); i++) {
             String lang = al.get(i).lang;
-            if (map.containsKey(lang)) {
-                map.put(lang, map.get(lang) + 1);
-            } else {
-                map.put(lang, 1);
-            }
+            if (map.containsKey(lang)) map.put(lang, map.get(lang) + 1);
+            else map.put(lang, 1);
         }
-        for (String key : map.keySet()) {
-            System.out.println(key + " " + map.get(key));
-        }
-        br.close();
-        sc.close();
+        for (String key : map.keySet()) System.out.println(key + " " + map.get(key));
     }
 }
-
-// EXPECTED OUTPUT:
 // PHP 2
 // C# 1
 // Prolog 1
