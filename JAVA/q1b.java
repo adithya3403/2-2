@@ -16,9 +16,7 @@ public class q1b {
         for (int i = 0; n - i > 100; i++) {
             boolean low = isGupful(n - i);
             boolean high = isGupful(n + i);
-            if (low || high) {
-                return low ? n - i : n + i;
-            }
+            if (low || high) return low ? n - i : n + i;
         }
         return 100;
     }
@@ -26,12 +24,9 @@ public class q1b {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(gupful(n));
-        sc.close();
     }
 }
-// case=1
 // input=25
 // output=100
-// case=2
 // input=103
 // output=105
