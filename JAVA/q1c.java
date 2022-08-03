@@ -14,17 +14,17 @@ public class q1c {
         System.out.print("Has the player played for India[y/n]?:");
         String ch = sc.next();
         System.out.print("Enter the no. of test matches he has played:");
-        int test_matches = sc.nextInt();
+        int tests = sc.nextInt();
         System.out.print("Enter the no. of ODI matches he has played:");
-        int ODI_matches = sc.nextInt();
+        int odis = sc.nextInt();
         System.out.print("No. of man of the matches he has won:");
-        int man_of_the_matches = sc.nextInt();
+        int motms = sc.nextInt();
         float amount = 0.0f;
-        if (test_matches > 10 && ODI_matches > 100) amount += 50000;
-        else if (test_matches > 10) amount += 25000;
-        else if (ODI_matches > 100) amount += 15000;
+        if (tests > 10 && odis > 100) amount += 50000;
+        else if (tests > 10) amount += 25000;
+        else if (odis > 100) amount += 15000;
         else if (ch.equals("y")) amount += 10000;
-        amount = amount + (amount * (man_of_the_matches * 0.25f));
+        amount += (amount * (motms * 0.25f));
         System.out.println(amount);
     }
 }
