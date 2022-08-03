@@ -7,14 +7,11 @@
 // resistance is 20 × 103 Ω or 20 kΩ.
 // Write a Resistor class containing the parameterized constructor, which takes in three strings
 // representing the three band colours. Write the methods to calculate and set the resistance for the resistor. 
-
 import java.util.*;
-
 class Resistor {
     HashMap<String, Integer> color;
     String band1 = "", band2 = "", band3 = "";
     double value = 0.0f;
-
     public Resistor(String b1, String b2, String b3) {
         band1 = b1;
         band2 = b2;
@@ -31,25 +28,19 @@ class Resistor {
         color.put("grey", 8);
         color.put("white", 9);
     }
-
     public String getResistance() {
         int d1 = color.get(band1);
         int d2 = color.get(band2);
         int d3 = (int) Math.pow(10, color.get(band3));
         String v1 = Integer.toString(d1) + Integer.toString(d2);
         value = Integer.parseInt(v1) * d3;
-        value = value / 1000;
-        v1 = value + " K ohms";
-        return v1;
+        return value / 1000 + " K ohms";
     }
 }
-
 public class q2 {
     public static void main(String args[]) {
         Resistor r1 = new Resistor("red", "black", "orange");
         System.out.println(r1.getResistance());
     }
 }
-
-// EXPECTED OUTPUT
 // 20.0 K ohms
