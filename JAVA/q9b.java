@@ -5,8 +5,7 @@
 // and we want to count how many key/value pairs they have in common.
 // You job is to write a method:
 // public int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2)
-// that is passed two objects of type HashMap<String, String> and returns the number of common
-// key/value pairs between the two HashMaps.
+// that returns the number of common key/value pairs between the two HashMaps
 import java.util.*;
 public class q9b {
     public static void main(String args[]) {
@@ -29,9 +28,7 @@ public class q9b {
             String pairs[] = sc.nextLine().split(" ");
             map2.put(pairs[0], pairs[1]);
         }
-        int result = commonKeyValuePairs(map1, map2);
-        System.out.println("The number of key/value pairs are : " + result);
-        sc.close();
+        System.out.println("The number of key/value pairs are : " + commonKeyValuePairs(map1, map2););
     }
     public static int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2) {
         int c = 0;
