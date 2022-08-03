@@ -9,7 +9,8 @@ public class q4c {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         String res = "";
-        for (int i = 0; i < str.length(); i++) {
+        int n=str.length();
+        for (int i = 0; i < n; i++) {
             switch (str.charAt(i)) {
                 case 'a': case 'b': case 'c': res+=2; break;
                 case 'd': case 'e': case 'f': res+=3; break;
