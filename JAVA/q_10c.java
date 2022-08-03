@@ -24,7 +24,7 @@
 import java.sql.*;
 import java.util.*;
 
-public class q10c {
+public class q_10c {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the Department No. : ");
