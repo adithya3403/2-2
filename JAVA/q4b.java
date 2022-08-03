@@ -8,7 +8,8 @@ public class q4b {
         Scanner sc = new Scanner(System.in);
         String w1 = sc.next();
         String w2 = sc.next();
-        int n1 = w1.length(), n2 = w2.length();
+        int n1 = w1.length();
+        int n2 = w2.length();
         StringBuilder sb = new StringBuilder();
         int i1 = 0, i2 = 0;
         while (i1 < n1 && i2 < n2) {
