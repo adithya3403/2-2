@@ -27,9 +27,7 @@ public class q6a {
             for (String s : s1) {
                 if (mobile.equals(ht.get(s))) System.out.println("Name is " + s);
             }
-        } else {
-            System.out.println("Not Found");
-        }
+        } else System.out.println("Not Found");
     }
 }
 // {Suresh=9876543210, Tej=9393320400, Ramesh=0123456789}
