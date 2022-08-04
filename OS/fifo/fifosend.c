@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 int main() {
-    int res, n;
-    res = open("fifo1", O_WRONLY);
+    int res = open("fifo1", O_WRONLY);
     write(res, "message", 7);
     printf("sender process having pid %d sent the data\n", getpid());
 }

@@ -9,14 +9,12 @@
 // representing the three band colours. Write the methods to calculate and set the resistance for the resistor. 
 import java.util.*;
 class Resistor {
-    HashMap<String, Integer> color;
-    String band1 = "", band2 = "", band3 = "";
-    double value = 0.0f;
+    String b1, b2, b3;
+    HashMap<String, Integer> color=new HashMap<>();;
     public Resistor(String b1, String b2, String b3) {
-        band1 = b1;
-        band2 = b2;
-        band3 = b3;
-        color = new HashMap<>();
+        this.b1 = b1;
+        this.b2 = b2;
+        this.b3 = b3;
         color.put("black", 0);
         color.put("brown", 1);
         color.put("red", 2);
@@ -28,20 +26,20 @@ class Resistor {
         color.put("grey", 8);
         color.put("white", 9);
     }
-    public String getResistance() {
-        int d1 = color.get(band1);
-        int d2 = color.get(band2);
-        int d3 = (int) Math.pow(10, color.get(band3));
+    public int getResistance() {
+        int d1 = color.get(b1);
+        int d2 = color.get(b2);
+        int d3 = (int) Math.pow(10, color.get(b3));
         String v1 = Integer.toString(d1) + Integer.toString(d2);
-        value = Integer.parseInt(v1) * d3;
-        return value / 1000 + " K ohms";
+        int v = Integer.parseInt(v1) * d3;
+        return (int)(v / 1000);
     }
 }
 public class q2 {
     public static void main(String args[]) {
         Resistor r1 = new Resistor("red", "black", "orange");
-        System.out.println(r1.getResistance());
+        System.out.println(r1.getResistance()+" Kilo ohms);
     }
 }
 // output:
-// 20.0 K ohms
+// 20 Kilo ohms

@@ -14,42 +14,35 @@
 // (e)Below is output of MySquare.java program when the user enters: 10 30 5.
 // Override the toString() method in MyRectangle in order to get such output.
 import java.util.*;
-class MyRectangle {
-    public int v1x, v1y, v2x, v2y;
-    public MyRectangle(int ver1x, int ver1y, int ver2x, int ver2y) {
-        v1x = ver1x;
-        v1y = ver1y;
-        v2x = ver2x;
-        v2y = ver2y;
+class MyR {
+    int v1x, v1y, v2x, v2y;
+    MyR(int v1x, int v1y, int v2x, int v2y) {
+        this.v1x = v1x; this.v1y = v1y;
+        this.v2x = v2x; this.v2y = v2y;
     }
-    public int area() { return Math.abs((v1x - v2x) * (v2y - v1y)); }
-    public MyRectangle overlap(MyRectangle rect) {
-        int x1 = Math.max(v1x, rect.v1x);
-        int y1 = Math.max(v1y, rect.v1y);
-        int x2 = Math.min(v2x, rect.v2x);
-        int y2 = Math.min(v2y, rect.v2y);
-        if (x1 > x2 || y1 > y2) return new MyRectangle(0, 0, 0, 0);
-        else return new MyRectangle(x1, y1, x2, y2);
+    MyR overlap(MyR rect) {
+        int x1 = Math.max(v1x, rect.v1x), y1 = Math.max(v1y, rect.v1y);
+        int x2 = Math.min(v2x, rect.v2x), y2 = Math.min(v2y, rect.v2y);
+        if (x1 > x2 || y1 > y2) return new MyR(0, 0, 0, 0);
+        else return new MyR(x1, y1, x2, y2);
     }
+    int area() { return Math.abs((v1x - v2x) * (v2y - v1y)); }
 }
-class MySquare extends MyRectangle {
-    public int xcor, ycor, length;
-    public MySquare(int xcord, int ycord, int leng) {
-        super(xcord, ycord, xcord + leng, ycord + leng);
-        xcor = xcord;
-        ycor = ycord;
-        length = leng;
+class MySq extends MyR {
+    int xcor, ycor, len;
+    MySq(int xcor, int ycor, int len) {
+        super(xcor, ycor, xcor + len, ycor + len);
+        this.xcor = xcor; this.ycor = ycor; this.len = len;
     }
-    public int area() { return length * length; }
+    public int area() { return len * len; }
+}
+public class q5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x, y, len;
-        x = sc.nextInt();
-        y = sc.nextInt();
-        len = sc.nextInt();
-        MySquare m = new MySquare(x, y, len);
-        System.out.println(m.area());
+        int x=sc.nextInt(), y=sc.nextInt(), len=sc.nextInt();
+        MySq sq = new MySq(x, y, len);
+        System.out.println(sq.area());
     }
 }
-// Sample Input: 10 30 5
-// Sample Output: 25
+// Input : 10 30 5
+// Output: 25
