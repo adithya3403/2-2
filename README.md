@@ -20,6 +20,7 @@
     - Banker's Algorithm
 - Experiment 5
     - [Paging](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/paging.c)
+- [all-in-one]()
 
 <!--
 ## [JAVA CODES]
