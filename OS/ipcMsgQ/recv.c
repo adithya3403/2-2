@@ -11,16 +11,13 @@ struct my_msg {
 };
 int main() {
     int running = 1;
-    int msgid;
     struct my_msg some_data;
     long int msg_to_rec = 0;
-    msgid = msgget((key_t)14534, 0666 | IPC_CREAT);
+    int msgid = msgget((key_t)14534, 0666 | IPC_CREAT);
     while (running) {
         msgrcv(msgid, (void *)&some_data, BUFSIZ, msg_to_rec, 0);
         printf("Data received: %s\n", some_data.some_text);
-        if (strncmp(some_data.some_text, "end", 3) == 0) {
-            running = 0;
-        }
+        if (strncmp(some_data.some_text, "end", 3) == 0) running = 0;
     }
     msgctl(msgid, IPC_RMID, 0);
 }
