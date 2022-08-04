@@ -4,6 +4,7 @@
 // Input : arr[] = {3, 0, 0, 2, 0, 4}
 // Output : 10
 // We can trap"3*2 units"of water between 3 an 2,"1 unit"on top of bar 2 and"3 units"between 2 and 4.
+import java.util.*;
 public class q3c {
     public static int maxWater(int[] arr) {
         int res = 0;
@@ -18,7 +19,10 @@ public class q3c {
         return res;
     }
     public static void main(String[] args) {
-        int[] arr = { 3, 0, 0, 2, 0, 4 };
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for (int i=0; i<n; i++) arr[i]=sc.nextInt();
         System.out.print(maxWater(arr));
     }
 }
