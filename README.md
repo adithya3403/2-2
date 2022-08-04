@@ -17,11 +17,11 @@
     - b
         - [Producer-Consumer-using-Semaphore](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/producer_consumer_semaphores.c)
 - Experiment 4
-    - [Banker's-Algorithm](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/safety.c)
+    - Banker's Algorithm
 - Experiment 5
     - [Paging](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/paging.c)
 
-
+<!--
 ## [JAVA CODES]
 - Experiment 1
     - [(k+1)*k](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1a.java)
@@ -53,3 +53,4 @@
     - [Employee-table](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q_10a.java)
     - [Dallas](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q_10b.java)
     - [dno, dname, dloc](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q_10c.java)
+-->
