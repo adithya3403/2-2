@@ -40,35 +40,19 @@
 import java.sql.*;
 import java.util.*;
 public class q_10a {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the Department Number : ");
         int deptNum = sc.nextInt();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
-            Statement stmt = con.createStatement();
-            String sql = "select ename from emp where deptno = " + deptNum + " order by ename asc";
-            ResultSet rs = stmt.executeQuery(sql);
-            ResultSetMetaData rsmd = rs.getMetaData();
-            System.out.println("");
-            int numberOfColumns = rsmd.getColumnCount();
-            for (int i = 1; i <= numberOfColumns; i++) {
-                if (i > 1) System.out.print("	");
-                String columnName = rsmd.getColumnName(i);
-                System.out.print(columnName);
-            }
-            System.out.println("");
-            while (rs.next()) {
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    if (i > 1) System.out.print(",  ");
-                    String columnValue = rs.getString(i);
-                    System.out.print(columnValue);
-                }
-                System.out.println("");
-            }
-            con.close();
-        } catch (Exception e) { System.out.println(e); }
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
+        Statement stmt = con.createStatement();
+        String sql = "select ename from emp where deptno = " + deptNum + " order by ename asc";
+        ResultSet rs = stmt.executeQuery(sql);
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int n = rsmd.getColumnCount();
+        for (int i = 1; i <= n; i++) System.out.print(rsmd.getColumnName(i));
+        while (rs.next()) for (int i = 1; i <= n; i++) System.out.print("\n"+rs.getString(i));
     }
 }
 // Enter the Department Number : 5
