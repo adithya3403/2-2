@@ -7,8 +7,7 @@
 import java.util.*;
 public class q3c {
     public static int maxWater(int[] arr) {
-        int res = 0;
-        int n = arr.length;
+        int res = 0, n = arr.length;
         for (int i = 1; i < n - 1; i++) {
             int left = arr[i];
             for (int j = 0; j < i; j++) left = Math.max(left, arr[j]);
