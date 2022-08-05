@@ -12,24 +12,22 @@ into the system and to decide which process to run.
 A) CPU utilisation, throughput, Turn arounf time, waiting time
 
 4. scheduling algs
-A) fcfs, sjf, priority(preemp and nonpreemp), SRT, RR, multi-level queue,
-multi-level feedback queues, etc.
+A) fcfs, sjf, priority, SRT, RR, multi-level queues, etc.
 
 5. preemp and non-preemp differences
-A) Key Differences Between Preemptive and Non-Preemptive Scheduling: In 
-preemptive scheduling, the CPU is allocated to the processes for a 
-limited time whereas, in Non-preemptive scheduling, the CPU is allocated 
+A) In preemptive, the CPU is allocated to the processes for a 
+limited time whereas, in Non-preemptive, the CPU is allocated 
 to the process till it terminates or switches to the waiting state.
 
 6. shared mem and message passing differences
-A) shmem: It is used for communication between single processor and 
+A) shmem: used for communication between single processor and 
 multiprocessor systems where the processes that are to be communicated 
 present on the same machine and they are sharing common address space.
-speed: high
+speed: fast
 
 msg passing: It is used in distributed environments where the 
 communicating processes are present on remote machines which are 
-connected with the help of a network. speed: time consuming
+connected with the help of a network. speed: slow
 
 7. diff types of functions used in shared mem and message passing
 (explain about parameters)
@@ -137,11 +135,130 @@ to the end of a queue by msgsnd().
 A) security, error detection, memory management, processor management, 
 device management, files management, job accounting, control over system performance, etc.
 
-8. starvation
-A) Starvation is the problem that occurs when high priority processes 
+8. starvation : the problem that occurs when high priority processes 
 keep executing and low priority processes get blocked for indefinite 
 time
 
-9. aging technique
-A) Aging is a technique of gradually increasing the priority of 
+9. Aging : technique of gradually increasing the priority of 
 processes that wait in the system for a long time.
+
+10. paging: Paging is a memory management scheme that eliminates the need 
+for contiguous allocation of physical memory. 
+
+11. bootstrap: technique by which simple computer program activates a 
+system of programs.
+
+12. named and unnames pipes diff: named pipes are bidirectional means 
+same FIFO can be read from as well as written into. Unnamed are 
+unidirectional. Named pipes stay even after process termination whereas 
+unnamed pipes vanished after termination.
+
+13. disk scheduling algo: Disk scheduling is done by operating systems to 
+schedule I/O requests arriving for the disk. Disk scheduling is also 
+known as I/O scheduling. 
+Algs: FCFS, SSTF(best), SCAN, CSCAN, LOOK, CLOOK
+
+14. segmentation: memory management technique in which the memory is 
+divided into the variable size parts. Each part is known as a segment 
+which can be allocated to a process.
+
+15. virtual memory: Virtual Memory is a storage allocation scheme in 
+which secondary memory can be addressed as though it were part of the 
+main memory.
+
+16. explain Round Robin alg: used to schedule the process fairly for each 
+job a time slot or quantum and the interrupting the job if it is not 
+completed by then the job come after the other job which is arrived in 
+the quantum time that makes these scheduling fairly. it is cyclic, so no 
+starvation occurs.
+
+17. Inter Process communication: the mechanisms an operating system 
+provides to allow the processes to manage shared data. two types:
+shared memory(fast, Since there is no need to copy data to share to 
+other process) and message queue(slow)
+
+18. advantages of IPC: information sharing, modularity, computational speedup, convenience
+
+19. zombie process: process that has completed execution (via the exit 
+system call) but still has an entry in the process table: it is a 
+process in the "Terminated state".
+
+20. diff bw process and thread: process is program in execution, it 
+takes more time for creation, termination, context switching and less 
+efficient in terms of execution time. thread is a lightweight process 
+that can be created and terminated very fast and it also faster in 
+context switching.
+
+21. semaphore: Semaphores are integer variables that are used to solve 
+the critical section problem by using two atomic operations, wait and 
+signal functions. two types: binary(0 or 1) and counting(other than 0).
+
+22. process synchronisation: the way by which processes that share the 
+same memory space are managed in an operating system.
+
+23. race condition : occurs when two threads access a shared variable 
+at the same time. The first thread reads the variable, and the second 
+thread reads the same value from the variable.
+
+24. deadlock: a situation in which more than one process is blocked 
+because it is holding a resource and also requires some resource that 
+is acquired by some other process. 
+
+25. methods of handling deadlock: prevention, avoidance, detection, recovery
+
+26. prevention: 4 conditions: mutual exclusion, hold and wait, no 
+preemption, circular wait.
+27. avoidance: RAG and bankers alg
+28. RAG: RAG is a directed graph which can be used to represent the 
+state of a system in the form of picture.
+29. banker's alg: used to avoid deadlock and allocate resources safely 
+to each process in the computer system.
+
+30. wait for graph: directed graph used for deadlock detection in operating systems and relational database systems.
+
+31. deadlock recovery: process termination and resource preemption
+32. preemp and non-preemp differences : In preemptive, the CPU is 
+allocated to the processes for a  limited time whereas, in 
+Non-preemptive, the CPU is allocated to the process till it terminates 
+or switches to the waiting state.
+
+33. logical vs physical address: Logical address is generated by CPU in 
+perspective of a program whereas the physical address is a location 
+that exists in the memory unit. 
+
+34. contiguous memory: system assigns consecutive memory blocks (memory blocks having consecutive addresses) to a process.
+
+35. fragmentation: As processes are loaded and removed from memory, the 
+free memory space is broken into little pieces. It happens after 
+sometimes that processes cannot be allocated to memory blocks 
+considering their small size and memory blocks remains unused. This 
+problem is known as Fragmentation.
+
+36. internal vs external fragmentation: Internal Fragmentation occurs 
+when a process needs more space than the size of allotted memory block 
+or use less space. External Fragmentation occurs when a process is 
+removed from the main memory.
+
+37. first, best and worst fits: first fit approach is to allocate the 
+first free partition or hole large enough which can accommodate the 
+process. 
+best fit deals with allocating the smallest free partition which meets 
+the requirement of the requesting process. This algorithm first 
+searches the entire list of free partitions and considers the smallest 
+hole that is adequate.
+worst fit approach is to locate largest available free portion so that 
+the portion left will be big enough to be useful. It is the reverse of 
+best fit.
+
+38. A process control block (PCB) is a data structure used by computer 
+operating systems to store all the information about a process.
+
+39. page fault: A page fault is an interruption that occurs when a 
+software program attempts to access a memory block not currently stored 
+in the system's RAM. 
+
+40. page replacement algos: FIFO(best for small systems), optimal(least page faults), LRU(replace page that will not be used for long time)
+
+41. free space mgmt: The system keeps tracks of the free disk blocks 
+for allocating space to files when they are created. 4 types: bit 
+vector, linkedlist, grouping, counting
