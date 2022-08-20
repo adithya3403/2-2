@@ -1,7 +1,7 @@
 # VSCODE FILES
 
-#### [OS CODES]
-#### [JAVA CODES]
+#### OS CODES
+#### JAVA CODES
 <!--
 - Experiment 2
     - a
