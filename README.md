@@ -1,6 +1,8 @@
 # VSCODE FILES
 
 ## [OS CODES]
+## [JAVA CODES]
+<!--
 - Experiment 2
     - a
         - [Pipes](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/pipes.c)
@@ -22,8 +24,6 @@
     - [Paging](https://github.com/adithya3403/VSCODE-FILES/blob/main/OS/paging.c)
 - [all-in-one](https://github.com/adithya3403/VSCODE-FILES/blob/main/sample.ipynb)
 
-<!--
-## [JAVA CODES]
 - Experiment 1
     - [(k+1)*k](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1a.java)
     - [gapful-num](https://github.com/adithya3403/VSCODE-FILES/blob/main/JAVA/q1b.java)
